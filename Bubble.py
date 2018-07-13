@@ -28,7 +28,7 @@ class Bubble:
             except:
                 pos = 0
 
-                if not done:
+                if not changed:
                     return
 
                 changed = False

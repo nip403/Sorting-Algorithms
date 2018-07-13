@@ -35,9 +35,9 @@ class methods:
         q = Quicksort(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
         q.main()
 
-    def selection(self):
-        s = Selection(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
-        s.main()
+    def insertion(self):
+        i = Insertion(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
+        i.main()
 
     def cocktail(self):
         c = Cocktail(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)

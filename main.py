@@ -17,7 +17,7 @@ medfont = pygame.font.SysFont("Garamond MS",40)
 smallfont = pygame.font.SysFont("Garamond MS",20)
 
 def main():
-    M = methods(0,arr_length,clock,smallfont)
+    M = methods(0,arr_length,clock,screen,smallfont)
     
     head1 = medfont.render("Enter Sorting Type:",True,(255,255,255))
     head2 = medfont.render("Types:",True,(255,255,255))

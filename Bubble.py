@@ -14,7 +14,7 @@ class Bubble:
         pos = 0
         changed = False
 
-        while not changed:
+        while True:
             self.clock.tick(self.fps)
 
             try:

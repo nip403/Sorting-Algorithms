@@ -14,7 +14,6 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Cocktail Shaker Sort
 - Bogo Sort
 - Odd-Even Sort
-- Bitonic Sort
 
 # Problems
 - Merge Sort (TopDown): Find out how to draw the whole list (currently drawing recursive bit)
@@ -29,3 +28,4 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Shell Sort
 - Binary Tree Sort
 - Library Sort
+- Bitonic Sort

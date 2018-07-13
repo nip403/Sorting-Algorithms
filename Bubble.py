@@ -22,8 +22,8 @@ class Bubble:
                     self.array[pos],self.array[pos+1] = self.array[pos+1],self.array[pos]
                     changed = True
                 pos += 1
-                accesses += 6
-                comparisons += 1
+                self.accesses += 6
+                self.comparisons += 1
                 
             except:
                 pos = 0

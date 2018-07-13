@@ -10,6 +10,7 @@ from Cocktail import Cocktail
 from Bogo import Bogo
 from Oddeven import Oddeven
 from MergeTD import MergeTD
+from Bitonic import Bitonic
 
 class methods:
     def __init__(self,fps,length,clockObject,surface,font):

@@ -29,7 +29,8 @@ def main():
         "Cocktail Shaker Sort: 'c'",
         "Bogo Sort: 'j'",
         "Odd-Even Sort: 'o'",
-        "Merge Sort (TopDown): 'm'"
+        "Merge Sort (TopDown): 'm'",
+        "Bitonic Sort: 'p'"
     ])]
 
     current = ""
@@ -59,6 +60,8 @@ def main():
                         M.oddeven()
                     elif current == "m":
                         M.mergeTD()
+                    elif current == "p":
+                        M.bitonic()
                         
                 else:
                     current = chr(event.key)

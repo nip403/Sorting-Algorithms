@@ -55,3 +55,7 @@ class methods:
     def mergeTD(self):
         m = MergeTD(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
         m.main()
+        
+    def bitonic(self):
+        b = Bitonic(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
+        b.main()

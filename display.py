@@ -6,7 +6,7 @@ class Display:
         self.sorting_colour = (255,0,0)
         self.thickness = bar_thickness
         self.s = windowsize
-        self.screen = surface
+        self.surface = surface
         self.font = font
 
     def draw(self,array,*highlighted,background=(0,0,0)):

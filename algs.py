@@ -55,3 +55,4 @@ class methods:
         m = MergeTD(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
         m.main()
         
+

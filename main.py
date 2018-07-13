@@ -3,9 +3,9 @@ import random
 import sys
 from algs import methods
 
-arr_length = 50
-bar_thickness = 50
 s = [1000,700]
+arr_length = 50
+bar_thickness = s[0]/arr_length
 
 pygame.init()
 screen = pygame.display.set_mode(s,0,32)
@@ -25,7 +25,7 @@ def main():
     typelist = [[smallfont.render(i,True,(255,255,255)),[80,340+(p*15)]] for p,i in enumerate([
         "Bubble Sort: 'b'",
         "Quick Sort: 'q'",
-        "Selection Sort: 's'",
+        "Insertion Sort: 'i'",
         "Cocktail Shaker Sort: 'c'",
         "Bogo Sort: 'j'",
         "Odd-Even Sort: 'o'",
@@ -49,10 +49,10 @@ def main():
                         M.quicksort()
                     elif current == "b":
                         M.bubble()
-                    elif current == "s":
-                        M.selection()
+                    elif current == "i":
+                        M.insertion()
                     elif current == "c":
-                        M.cocktail_shaker()
+                        M.cocktail()
                     elif current == "j":
                         M.bogo()
                     elif current == "o":

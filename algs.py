@@ -5,7 +5,7 @@ from display import Display
 
 from Bubble import Bubble
 from Quicksort import Quicksort
-from Selection import Selection
+from Insertion import Insertion
 from Cocktail import Cocktail
 from Bogo import Bogo
 from Oddeven import Oddeven

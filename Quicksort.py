@@ -30,9 +30,12 @@ class Quicksort:
 
             pygame.display.flip()
 
-    def main(self,array=self.array,first=0,last=len(self.array)-1):
-        if fist < last:
+    def qs(self,array,first,last):
+        if first < last:
             pivot = partition(array,first,last)
             self.qs(array,first,pivot-1)
             self.qs(array,pivot+1,last)
+            
+    def main(self):
+        self.qs(self.array,0,len(self.array)-1)
         

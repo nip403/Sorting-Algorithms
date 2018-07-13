@@ -12,16 +12,17 @@ from Oddeven import Oddeven
 from MergeTD import MergeTD
 
 class methods:
-    def __init__(self,fps,length,clockObject):
+    def __init__(self,fps,length,clockObject,surface):
         self.fps = fps
         self.length = length
         self.clock = clockObject
+        self.surface = surface
 
-    def setup(self):
-        self.array = list(range(self.length))
+    def setup(self,thickness,windowsize):
+        self.array = list(thickness,windowsize,range(self.length))
         random.shuffle(self.array)
 
-        self.display = Display()
+        self.display = Display(self.surface)
         self.accesses = 0
         self.comparisons = 0
 

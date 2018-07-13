@@ -12,9 +12,10 @@ from Oddeven import Oddeven
 from MergeTD import MergeTD
 
 class methods:
-    def __init__(self,fps,length):
+    def __init__(self,fps,length,clockObject):
         self.fps = fps
         self.length = length
+        self.clock = clockObject
 
     def setup(self):
         self.array = list(range(self.length))
@@ -25,30 +26,30 @@ class methods:
         self.comparisons = 0
 
     def bubble(self):
-        b = Bubble(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons)
+        b = Bubble(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
         b.main()
 
     def quicksort(self):
-        q = Quicksort(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons)
+        q = Quicksort(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
         q.main()
 
     def selection(self):
-        s = Selection(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons)
+        s = Selection(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
         s.main()
 
     def cocktail(self):
-        c = Cocktail(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons)
+        c = Cocktail(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
         c.main()
 
     def bogo(self):
-        b = Bogo(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons)
+        b = Bogo(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
         b.main()
 
     def oddeven(self):
-        o = Oddeven(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons)
+        o = Oddeven(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
         o.main()
 
     def mergeTD(self):
-        m = MergeTD(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons)
+        m = MergeTD(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
         m.main()
         

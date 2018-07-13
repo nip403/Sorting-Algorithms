@@ -35,7 +35,7 @@ class Bubble:
 
             self.display.events()
             self.display.draw(self.array,pos)
-            self.display.drawother(self.accesses,self.comparisons)
+            self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()
                 

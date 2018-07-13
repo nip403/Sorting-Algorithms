@@ -43,6 +43,7 @@ def main():
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
 
+                    M.setup()
                     if current == "q":
                         M.quicksort()
                     elif current == "b":

@@ -22,7 +22,7 @@ def main():
     head1 = medfont.render("Enter Sorting Type:",True,(255,255,255))
     head2 = medfont.render("Types:",True,(255,255,255))
 
-    typelist = [[small.render(i,True,(255,255,255)),[80,340+(p*15)]] for p,i in enumerate([
+    typelist = [[smallfont.render(i,True,(255,255,255)),[80,340+(p*15)]] for p,i in enumerate([
         "Bubble Sort: 'b'",
         "Quick Sort: 'q'",
         "Selection Sort: 's'",

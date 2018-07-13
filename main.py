@@ -1,7 +1,6 @@
 import pygame
 import random
 import sys
-from display import Display
 from algs import methods
 
 arr_length = 50
@@ -30,7 +29,7 @@ def main():
         "Cocktail Shaker Sort: 'c'",
         "Bogo Sort: 'j'",
         "Odd-Even Sort: 'o'",
-        "Merge Sort: 'm'"
+        "Merge Sort (TopDown): 'm'"
     ])]
 
     current = ""
@@ -57,7 +56,7 @@ def main():
                     elif current == "o":
                         M.oddeven()
                     elif current == "m":
-                        M.merge()
+                        M.mergeTD()
                         
                 else:
                     current = chr(event.key)

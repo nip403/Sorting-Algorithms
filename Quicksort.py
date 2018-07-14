@@ -26,13 +26,23 @@ class Quicksort:
 
             self.display.events()
             self.display.draw(array,i,j,pivot)
-            self.display.draw_others(self.accesses,self.comparisons)
+            self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()
 
+        array[i+1],array[last] = array[last],array[i+1]
+        self.accesses += 4
+
+        self.display.draw(array,i,j)
+        self.display.draw_other(self.accesses,self.comparisons)
+
+        pygame.display.flip()
+
+        return i + 1
+
     def qs(self,array,first,last):
         if first < last:
-            pivot = partition(array,first,last)
+            pivot = self.partition(array,first,last)
             self.qs(array,first,pivot-1)
             self.qs(array,pivot+1,last)
             

@@ -4,7 +4,7 @@ import sys
 from algs import methods
 
 s = [1000,700]
-arr_length = 50
+arr_length = 500
 bar_thickness = s[0]/arr_length
 
 pygame.init()
@@ -29,8 +29,9 @@ def main():
         "Cocktail Shaker Sort: 'c'",
         "Bogo Sort: 'j'",
         "Odd-Even Sort: 'o'",
-        "Merge Sort (TopDown): 'm'",
-        "Bitonic Sort: 'p'"
+        "Shell Sort: 's'",
+        "Comb Sort: 'l'",
+        "Gnome Sort: 'g'",
     ])]
 
     current = ""
@@ -58,10 +59,12 @@ def main():
                         M.bogo()
                     elif current == "o":
                         M.oddeven()
-                    elif current == "m":
-                        M.mergeTD()
-                    elif current == "p":
-                        M.bitonic()
+                    elif current == "s":
+                        M.shell()
+                    elif current == "l":
+                        M.comb()
+                    elif current == "g":
+                        M.gnome()
                         
                 else:
                     current = chr(event.key)
@@ -79,3 +82,21 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

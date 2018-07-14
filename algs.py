@@ -9,8 +9,9 @@ from Insertion import Insertion
 from Cocktail import Cocktail
 from Bogo import Bogo
 from Oddeven import Oddeven
-from MergeTD import MergeTD
-from Bitonic import Bitonic
+from Shell import Shell
+from Comb import Comb
+from Gnome import Gnome
 
 class methods:
     def __init__(self,fps,length,clockObject,surface,font):
@@ -52,10 +53,18 @@ class methods:
         o = Oddeven(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
         o.main()
 
-    def mergeTD(self):
-        m = MergeTD(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
-        m.main()
+    def shell(self):
+        s = Shell(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
+        s.main()
+
+    def comb(self):
+        c = Comb(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
+        c.main()
+
+    def gnome(self):
+        g = Gnome(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
+        g.main()
+
+    
         
-    def bitonic(self):
-        b = Bitonic(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
-        b.main()
+        

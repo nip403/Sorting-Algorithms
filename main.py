@@ -32,6 +32,7 @@ def main():
         "Shell Sort: 's'",
         "Comb Sort: 'l'",
         "Gnome Sort: 'g'",
+        "Merge Sort: 'm':
     ])]
 
     current = ""
@@ -65,6 +66,8 @@ def main():
                         M.comb()
                     elif current == "g":
                         M.gnome()
+                    elif current == "m":
+                        M.merge()
                         
                 else:
                     current = chr(event.key)

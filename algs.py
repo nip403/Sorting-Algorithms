@@ -13,6 +13,8 @@ from Shell import Shell
 from Comb import Comb
 from Gnome import Gnome
 
+from MergeTD import MergeTD
+
 class methods:
     def __init__(self,fps,length,clockObject,surface,font):
         self.fps = fps
@@ -65,6 +67,9 @@ class methods:
         g = Gnome(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
         g.main()
 
-    
+    def merge(self):
+        m = MergeTD(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
+        m.main()
+
         
         

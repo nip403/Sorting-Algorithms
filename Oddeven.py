@@ -1,21 +1,20 @@
 import pygame
 
 class Oddeven:
-    def __init__(self,displayObject,array,fps,arr_length,accesses,comparisons,clock):
-        self.display = displayObject
+    def __init__(self,array,displayObject,clock,fps,arr_length):
         self.array = array
-        self.fps = fps
-        self.length = arr_length
-        self.accesses = accesses
-        self.comparisons = comparisons
+        self.display = displayObject
         self.clock = clock
-
+        self.fps = fps
+        self.accesses = 0
+        self.comparisons = 0
+        
     def main(self):
         while True:
             done = True
 
             for e in reversed(range(2)):
-                for i in range(e,self.length-1,2):
+                for i in range(e,len(self.array)-1,2):
                     self.clock.tick(self.fps)
 
                     if self.array[i] > self.array[i+1]:

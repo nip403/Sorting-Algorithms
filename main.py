@@ -4,8 +4,10 @@ import pygame
 import random
 import sys
 
+arr_length = 200
+fps = 20
+
 s = [1000,700]
-arr_length = 500
 bar_thickness = s[0]/arr_length
 
 pygame.init()
@@ -18,7 +20,7 @@ medfont = pygame.font.SysFont("Garamond MS",40)
 smallfont = pygame.font.SysFont("Garamond MS",20)
 
 def main():
-    M = methods(0,arr_length,clock,screen,smallfont)
+    M = methods(fps,arr_length,clock,screen,smallfont)
     
     head1 = medfont.render("Enter Sorting Type:",True,(255,255,255))
     head2 = medfont.render("Types:",True,(255,255,255))

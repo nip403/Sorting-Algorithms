@@ -1,17 +1,16 @@
 import pygame
 
 class Shell:
-    def __init__(self,displayObject,array,fps,arr_length,accesses,comparisons,clock):
-        self.display = displayObject
+    def __init__(self,array,displayObject,clock,fps,arr_length):
         self.array = array
-        self.fps = fps
-        self.length = arr_length
-        self.accesses = accesses
-        self.comparisons = comparisons
+        self.display = displayObject
         self.clock = clock
+        self.fps = fps
+        self.accesses = 0
+        self.comparisons = 0
 
     def main(self):
-        n = self.length
+        n = len(self.array)
         gap = n//2
 
         while gap > 0:
@@ -38,5 +37,3 @@ class Shell:
 
                 pygame.display.flip()
             gap //= 2
-
-        

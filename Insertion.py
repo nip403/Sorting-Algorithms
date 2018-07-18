@@ -1,21 +1,20 @@
 import pygame
 
 class Insertion:
-    def __init__(self,displayObject,array,fps,arr_length,accesses,comparisons,clock):
-        self.display = displayObject
+    def __init__(self,array,displayObject,clock,fps,arr_length):
         self.array = array
-        self.fps = fps
-        self.length = arr_length
-        self.accesses = accesses
-        self.comparisons = comparisons
+        self.display = displayObject
         self.clock = clock
+        self.fps = fps
+        self.accesses = 0
+        self.comparisons = 0
 
     def main(self):
-        for i in range(0,self.length-1):
+        for i in range(0,len(array)-1):
             min_pos = i
             self.accesses += 1
 
-            for j in range(i+1,self.length):
+            for j in range(i+1,len(array)):
                 self.clock.tick(self.fps)
                 self.accesses += 1
 
@@ -38,5 +37,3 @@ class Insertion:
             self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()
-
-        

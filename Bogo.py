@@ -11,7 +11,7 @@ class Bogo:
         self.comparisons = 0
 
     def main(self):
-        check = lambda arr,acc,com: [all([arr[i+1] > arr[i] for i in range(len(arr)-1)]),2*self.length+acc,self.length+com]
+        check = lambda arr,acc,com: [all([arr[i+1] > arr[i] for i in range(len(arr)-1)]),2*len(self.array)+acc,len(self.array)+com]
 
         while True:
             state,self.accesses,self.comparisons = check(self.array,self.accesses,self.comparisons)

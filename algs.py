@@ -1,6 +1,3 @@
-import pygame
-import random
-
 from display import Display
 
 from Bubble import Bubble
@@ -12,8 +9,10 @@ from Oddeven import Oddeven
 from Shell import Shell
 from Comb import Comb
 from Gnome import Gnome
-
 from MergeTD import MergeTD
+
+import pygame
+import random
 
 class methods:
     def __init__(self,fps,length,clockObject,surface,font):
@@ -32,44 +31,41 @@ class methods:
         self.comparisons = 0
 
     def bubble(self):
-        b = Bubble(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
-        b.main()
+        method = Bubble(self.array,self.display,self.clock,self.fps,self.accesses,self.comparisons)
+        method.main()
 
     def quicksort(self):
-        q = Quicksort(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
-        q.main()
+        method = Quicksort(self.array,self.display,self.clock,self.fps,self.accesses,self.comparisons)
+        method.main()
 
     def insertion(self):
-        i = Insertion(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
-        i.main()
+        method = Insertion(self.array,self.display,self.clock,self.fps,self.accesses,self.comparisons)
+        method.main()
 
     def cocktail(self):
-        c = Cocktail(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
-        c.main()
+        method = Cocktail(self.array,self.display,self.clock,self.fps,self.accesses,self.comparisons)
+        method.main()
 
     def bogo(self):
-        b = Bogo(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
-        b.main()
+        method = Bogo(self.array,self.display,self.clock,self.fps,self.accesses,self.comparisons)
+        method.main()
 
     def oddeven(self):
-        o = Oddeven(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
-        o.main()
+        method = Oddeven(self.array,self.display,self.clock,self.fps,self.accesses,self.comparisons)
+        method.main()
 
     def shell(self):
-        s = Shell(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
-        s.main()
+        method = Shell(self.array,self.display,self.clock,self.fps,self.accesses,self.comparisons)
+        method.main()
 
     def comb(self):
-        c = Comb(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
-        c.main()
+        method = Comb(self.array,self.display,self.clock,self.fps,self.accesses,self.comparisons)
+        method.main()
 
     def gnome(self):
-        g = Gnome(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
-        g.main()
+        method = Gnome(self.array,self.display,self.clock,self.fps,self.accesses,self.comparisons)
+        method.main()
 
     def merge(self):
-        m = MergeTD(self.display,self.array,self.fps,self.length,self.accesses,self.comparisons,self.clock)
-        m.main()
-
-        
-        
+        method = MergeTD(self.array,self.display,self.clock,self.fps,self.accesses,self.comparisons)
+        mmethod.main()

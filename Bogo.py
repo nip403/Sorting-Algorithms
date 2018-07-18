@@ -2,14 +2,13 @@ import pygame
 import random
 
 class Bogo:
-    def __init__(self,displayObject,array,fps,arr_length,accesses,comparisons,clock):
-        self.display = displayObject
+    def __init__(self,array,displayObject,clock,fps,arr_length):
         self.array = array
-        self.fps = fps
-        self.length = arr_length
-        self.accesses = accesses
-        self.comparisons = comparisons
+        self.display = displayObject
         self.clock = clock
+        self.fps = fps
+        self.accesses = 0
+        self.comparisons = 0
 
     def main(self):
         check = lambda arr,acc,com: [all([arr[i+1] > arr[i] for i in range(len(arr)-1)]),2*self.length+acc,self.length+com]

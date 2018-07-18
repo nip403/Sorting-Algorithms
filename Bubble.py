@@ -1,14 +1,13 @@
 import pygame
 
 class Bubble:
-    def __init__(self,displayObject,array,fps,arr_length,accesses,comparisons,clock):
-        self.display = displayObject
+    def __init__(self,array,displayObject,clock,fps,arr_length):
         self.array = array
-        self.fps = fps
-        self.length = arr_length
-        self.accesses = accesses
-        self.comparisons = comparisons
+        self.display = displayObject
         self.clock = clock
+        self.fps = fps
+        self.accesses = 0
+        self.comparisons = 0
 
     def main(self):
         pos = 0

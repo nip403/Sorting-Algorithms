@@ -32,7 +32,7 @@ def main():
         "Shell Sort: 's'",
         "Comb Sort: 'l'",
         "Gnome Sort: 'g'",
-        "Merge Sort: 'm'"
+        "Merge (TD) Sort: 'm'"
     ])]
 
     current = ""

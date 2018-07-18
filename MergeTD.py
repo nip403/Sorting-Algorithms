@@ -27,17 +27,18 @@ class MergeTD:
         while len(total) > 0:
             self.clock.tick(self.fps)
             
-            self.comparisons += 1
-            self.accesses += 5
+            self.comparisons += len(total)
+            self.accesses += len(total) + 5
 
-            self.array[l0+len(new)] = min(total)
-            new.append(min(total))
+            lowest = min(total)
+            self.array[l0+len(new)] = lowest
+            new.append(lowest)
 
             self.display.events()
             self.display.draw(self.array,i0,i1,l0,l1,r0,r1,l0+len(new))
             self.display.draw_other(self.accesses,self.comparisons)
 
-            del total[total.index(min(total))]
+            del total[total.index(lowest)]
 
             pygame.display.flip()
 

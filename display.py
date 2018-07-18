@@ -13,11 +13,11 @@ class Display:
         self.surface.fill(background)
 
         for index,item in enumerate(array):
-            if not index in highlighted:
-                pygame.draw.rect(self.surface,self.base_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
+            if self.bars:
+                pygame.draw.rect(self.surface,self.base_colour if not index in highlighted else self.sorting_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
             else:
-                pygame.draw.rect(self.surface,self.sorting_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
-                
+                pygame.draw.circle(self.surface,self.base_colour if not index in highlighted else self.sorting_colour,list(map(int,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1])))),1,0)
+                   
     def draw_other(self,accesses,comparisons):
         a = self.font.render("Array Accesses: %s" % accesses,True,(255,0,0))
         c = self.font.render("Array Comparisions: %s" % comparisons,True,(255,0,0))

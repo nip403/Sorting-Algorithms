@@ -34,6 +34,19 @@ def main():
         "Gnome Sort: 'g'",
         "Merge (TD) Sort: 'm'"
     ])]
+    
+    keys = {
+        "q":M.quicksort,
+        "b":M.bubble,
+        "i":M.insertion,
+        "c":M.cocktail,
+        "j":M.bogo,
+        "o":M.oddeven,
+        "s":M.shell,
+        "l":M.comb,
+        "g":M.gnome,
+        "m":M.merge
+    }
 
     current = ""
 
@@ -48,26 +61,9 @@ def main():
 
                     M.setup(bar_thickness,s)
                     
-                    if current == "q":
-                        M.quicksort()
-                    elif current == "b":
-                        M.bubble()
-                    elif current == "i":
-                        M.insertion()
-                    elif current == "c":
-                        M.cocktail()
-                    elif current == "j":
-                        M.bogo()
-                    elif current == "o":
-                        M.oddeven()
-                    elif current == "s":
-                        M.shell()
-                    elif current == "l":
-                        M.comb()
-                    elif current == "g":
-                        M.gnome()
-                    elif current == "m":
-                        M.merge()
+                    for name,func in keys.items():
+                        if current == name:
+                            func()
                         
                 else:
                     current = chr(event.key)

@@ -1,7 +1,8 @@
+from algs import methods
+
 import pygame
 import random
 import sys
-from algs import methods
 
 s = [1000,700]
 arr_length = 500
@@ -32,7 +33,8 @@ def main():
         "Shell Sort: 's'",
         "Comb Sort: 'l'",
         "Gnome Sort: 'g'",
-        "Merge (TD) Sort: 'm'"
+        "Merge (TD) Sort: 'm'",
+        "Radix (LSD) Sort: 'r'"
     ])]
     
     keys = {
@@ -45,7 +47,8 @@ def main():
         "s":M.shell,
         "l":M.comb,
         "g":M.gnome,
-        "m":M.merge
+        "m":M.mergetd,
+        'r':M.radixlsd
     }
 
     current = ""

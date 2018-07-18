@@ -10,11 +10,11 @@ class Insertion:
         self.comparisons = 0
 
     def main(self):
-        for i in range(0,len(array)-1):
+        for i in range(0,len(self.array)-1):
             min_pos = i
             self.accesses += 1
 
-            for j in range(i+1,len(array)):
+            for j in range(i+1,len(self.array)):
                 self.clock.tick(self.fps)
                 self.accesses += 1
 

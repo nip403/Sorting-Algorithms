@@ -22,6 +22,7 @@ class methods:
         self.clock = clockObject
         self.surface = surface
         self.font = font
+        self.bars = bars
 
     def setup(self,thickness,windowsize):
         self.array = list(range(self.length))

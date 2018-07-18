@@ -1,17 +1,16 @@
 import pygame
 
 class Gnome:
-    def __init__(self,displayObject,array,fps,arr_length,accesses,comparisons,clock):
-        self.display = displayObject
+    def __init__(self,array,displayObject,clock,fps,arr_length):
         self.array = array
-        self.fps = fps
-        self.length = arr_length
-        self.accesses = accesses
-        self.comparisons = comparisons
+        self.display = displayObject
         self.clock = clock
+        self.fps = fps
+        self.accesses = 0
+        self.comparisons = 0
 
     def main(self):
-        for p in range(1,self.length):
+        for p in range(1,len(self.array)):
             while p > 0 and self.array[p-1] > self.array[p]:
                 self.clock.tick(self.fps)
                 
@@ -25,4 +24,3 @@ class Gnome:
                 self.display.draw_other(self.accesses,self.comparisons)
 
                 pygame.display.flip()
-                

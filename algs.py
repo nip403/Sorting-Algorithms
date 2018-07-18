@@ -68,4 +68,4 @@ class methods:
 
     def merge(self):
         method = MergeTD(self.array,self.display,self.clock,self.fps)
-        mmethod.main()
+        method.main()

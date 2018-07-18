@@ -1,14 +1,13 @@
 import pygame
 
 class Quicksort:
-    def __init__(self,displayObject,array,fps,arr_length,accesses,comparisons,clock):
-        self.display = displayObject
+    def __init__(self,array,displayObject,clock,fps,arr_length):
         self.array = array
-        self.fps = fps
-        self.length = arr_length
-        self.accesses = accesses
-        self.comparisons = comparisons
+        self.display = displayObject
         self.clock = clock
+        self.fps = fps
+        self.accesses = 0
+        self.comparisons = 0
 
     def partition(self,array,first,last):
         i = first - 1
@@ -48,4 +47,3 @@ class Quicksort:
             
     def main(self):
         self.qs(self.array,0,len(self.array)-1)
-        

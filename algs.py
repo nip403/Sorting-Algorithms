@@ -16,7 +16,7 @@ import pygame
 import random
 
 class methods:
-    def __init__(self,fps,length,clockObject,surface,font):
+    def __init__(self,fps,length,clockObject,surface,font,bars):
         self.fps = fps
         self.length = length
         self.clock = clockObject

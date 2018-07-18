@@ -19,7 +19,7 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Shellsort
 - Comb Sort
 - Gnome Sort
-- Merge Sort
+- Merge Sort (TopDOwn)
 
 # To-do List
 - Merge Sort (BottomUp)

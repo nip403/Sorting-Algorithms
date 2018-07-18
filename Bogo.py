@@ -2,7 +2,7 @@ import pygame
 import random
 
 class Bogo:
-    def __init__(self,array,displayObject,clock,fps,arr_length):
+    def __init__(self,array,displayObject,clock,fps):
         self.array = array
         self.display = displayObject
         self.clock = clock

@@ -1,17 +1,16 @@
 import pygame
 
 class Comb:
-    def __init__(self,displayObject,array,fps,arr_length,accesses,comparisons,clock):
-        self.display = displayObject
+    def __init__(self,array,displayObject,clock,fps,arr_length):
         self.array = array
-        self.fps = fps
-        self.length = arr_length
-        self.accesses = accesses
-        self.comparisons = comparisons
+        self.display = displayObject
         self.clock = clock
+        self.fps = fps
+        self.accesses = 0
+        self.comparisons = 0
 
     def main(self):
-        gap = self.length
+        gap = len(self.array)
         shrink = 1.2
 
         while True:
@@ -23,7 +22,7 @@ class Comb:
             elif gap < 1:
                 gap = 1
 
-            for i in range(int(self.length-gap)):
+            for i in range(int(len(self.array)-gap)):
                 self.clock.tick(self.fps)
                 
                 if self.array[i] > self.array[int(i+gap)]:

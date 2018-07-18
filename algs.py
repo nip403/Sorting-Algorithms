@@ -10,6 +10,7 @@ from Shell import Shell
 from Comb import Comb
 from Gnome import Gnome
 from MergeTD import MergeTD
+from RadixLSD import RadixLSD
 
 import pygame
 import random
@@ -66,6 +67,10 @@ class methods:
         method = Gnome(self.array,self.display,self.clock,self.fps)
         method.main()
 
-    def merge(self):
+    def mergetd(self):
         method = MergeTD(self.array,self.display,self.clock,self.fps)
+        method.main()
+        
+    def radixlsd(self):
+        method = RadixLSD(self.array,self.display,self.clock,self.fps)
         method.main()

@@ -32,7 +32,7 @@ def main():
         "Shell Sort: 's'",
         "Comb Sort: 'l'",
         "Gnome Sort: 'g'",
-        "Merge Sort: 'm':
+        "Merge Sort: 'm'"
     ])]
 
     current = ""
@@ -85,21 +85,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    

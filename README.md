@@ -24,8 +24,9 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 # To-do List
 - Merge Sort (BottomUp)
 - Heap Sort
-- Selection Sort
 - Introsort
 - Binary Tree Sort
 - Library Sort
 - Bitonic Sort
+- Radix Sort (LSD)
+- Radix Sort (MSD)

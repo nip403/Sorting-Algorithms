@@ -4,8 +4,8 @@ import pygame
 import random
 import sys
 
-arr_length = 200
-fps = 20
+arr_length = 500
+fps = 0
 draw_bars = True
 
 s = [1000,700]

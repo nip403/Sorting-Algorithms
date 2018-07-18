@@ -20,6 +20,7 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Comb Sort
 - Gnome Sort
 - Merge Sort (TopDOwn)
+- Radix Sort (LSD)
 
 # To-do List
 - Merge Sort (BottomUp)
@@ -28,5 +29,4 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Binary Tree Sort
 - Library Sort
 - Bitonic Sort
-- Radix Sort (LSD)
 - Radix Sort (MSD)

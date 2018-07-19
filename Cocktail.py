@@ -13,12 +13,13 @@ class Cocktail:
         for k in range(len(self.array)-1,0,-1):
             swapped = False
 
-            for i in range(k,0,-1):
+            for i in range(k,len(self.array)-k,-1):
                 self.clock.tick(self.fps)
 
                 if self.array[i] < self.array[i-1]:
                     self.array[i],self.array[i-1] = self.array[i-1],self.array[i]
                     swapped = True
+                    
                 self.accesses += 6
                 self.comparisons += 1
 
@@ -34,6 +35,7 @@ class Cocktail:
                 if self.array[i] > self.array[i+1]:
                     self.array[i],self.array[i+1] = self.array[i+1],self.array[i]
                     swapped = True
+                    
                 self.accesses += 6
                 self.comparisons += 1
 

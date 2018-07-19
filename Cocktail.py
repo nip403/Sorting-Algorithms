@@ -10,10 +10,12 @@ class Cocktail:
         self.comparisons = 0
 
     def main(self):
+        base = 0
+        
         for k in range(len(self.array)-1,0,-1):
             swapped = False
 
-            for i in range(k,len(self.array)-k,-1):
+            for i in range(k,base,-1):
                 self.clock.tick(self.fps)
 
                 if self.array[i] < self.array[i-1]:
@@ -24,12 +26,12 @@ class Cocktail:
                 self.comparisons += 1
 
                 self.display.events()
-                self.display.draw(self.array,k,i,i-1)
+                self.display.draw(self.array,k,i,i-1,base)
                 self.display.draw_other(self.accesses,self.comparisons)
 
                 pygame.display.flip()
 
-            for i in range(k):
+            for i in range(base,k):
                 self.clock.tick(self.fps)
 
                 if self.array[i] > self.array[i+1]:
@@ -40,10 +42,11 @@ class Cocktail:
                 self.comparisons += 1
 
                 self.display.events()
-                self.display.draw(self.array,k,i,i-1)
+                self.display.draw(self.array,k,i,i-1,base)
                 self.display.draw_other(self.accesses,self.comparisons)
 
                 pygame.display.flip()
 
+            base += 1
             if not swapped:
                 return

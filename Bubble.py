@@ -11,32 +11,31 @@ class Bubble:
 
     def main(self):
         pos = 0
+        lim = len(self.array)-1
         changed = False
 
         while True:
             self.clock.tick(self.fps)
-
-            try:
-                if self.array[pos] > self.array[pos+1]:
-                    self.array[pos],self.array[pos+1] = self.array[pos+1],self.array[pos]
-                    changed = True
-                pos += 1
-                self.accesses += 6
-                self.comparisons += 1
-                
-            except:
+            
+            if pos == lim:
                 pos = 0
-
+                lim -= 1
+                
                 if not changed:
                     return
-
+                
                 changed = False
-
+            
+            if self.array[pos] > self.array[pos+1]:
+                self.array[pos],self.array[pos+1] = self.array[pos+1],self.array[pos]
+                changed = True
+                
+            pos += 1
+            self.accesses += 6
+            self.comparisons += 1
+              
             self.display.events()
             self.display.draw(self.array,pos)
             self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()
-                
-
-    

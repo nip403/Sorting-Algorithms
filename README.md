@@ -19,8 +19,9 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Shellsort
 - Comb Sort
 - Gnome Sort
-- Merge Sort (TopDOwn)
-- Radix Sort (LSD)
+- Merge Sort (TopDOwn, out of place)
+- Radix Sort (LSD, base 256)
+- Counting Sort
 
 # To-do List
 - Merge Sort (BottomUp)

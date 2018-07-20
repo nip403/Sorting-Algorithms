@@ -37,7 +37,8 @@ def main():
         "Comb Sort: 'l'",
         "Gnome Sort: 'g'",
         "Merge (TD) Sort: 'm'",
-        "Radix (LSD) Sort: 'r'"
+        "Radix (LSD) Sort: 'r'",
+        "Counting Sort: 'x'"
     ])]
     
     keys = {
@@ -51,7 +52,8 @@ def main():
         "l":M.comb,
         "g":M.gnome,
         "m":M.mergetd,
-        'r':M.radixlsd
+        "r":M.radixlsd,
+        "x":M.counting
     }
 
     current = ""

@@ -11,6 +11,7 @@ from Comb import Comb
 from Gnome import Gnome
 from MergeTD import MergeTD
 from RadixLSD import RadixLSD
+from Counting import Counting
 
 import pygame
 import random
@@ -76,4 +77,8 @@ class methods:
         
     def radixlsd(self):
         method = RadixLSD(self.array,self.display,self.clock,self.fps)
+        method.main()
+        
+    def counting(self):
+        method = Counting(self.array,self.display,self.clock,self.fps)
         method.main()

@@ -1,6 +1,6 @@
 import pygame
 
-class Insertion:
+class Selection:
     def __init__(self,array,displayObject,clock,fps):
         self.array = array
         self.display = displayObject

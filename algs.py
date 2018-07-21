@@ -12,6 +12,7 @@ from Gnome import Gnome
 from MergeTD import MergeTD
 from RadixLSD import RadixLSD
 from Counting import Counting
+from Cycle import Cycle
 
 import pygame
 import random
@@ -35,50 +36,16 @@ class methods:
         
         setattr(self.display,"bars",self.bars)
 
-    def bubble(self):
-        method = Bubble(self.array,self.display,self.clock,self.fps)
-        method.main()
-
-    def quicksort(self):
-        method = Quicksort(self.array,self.display,self.clock,self.fps)
-        method.main()
-
-    def insertion(self):
-        method = Insertion(self.array,self.display,self.clock,self.fps)
-        method.main()
-
-    def cocktail(self):
-        method = Cocktail(self.array,self.display,self.clock,self.fps)
-        method.main()
-
-    def bogo(self):
-        method = Bogo(self.array,self.display,self.clock,self.fps)
-        method.main()
-
-    def oddeven(self):
-        method = Oddeven(self.array,self.display,self.clock,self.fps)
-        method.main()
-
-    def shell(self):
-        method = Shell(self.array,self.display,self.clock,self.fps)
-        method.main()
-
-    def comb(self):
-        method = Comb(self.array,self.display,self.clock,self.fps)
-        method.main()
-
-    def gnome(self):
-        method = Gnome(self.array,self.display,self.clock,self.fps)
-        method.main()
-
-    def mergetd(self):
-        method = MergeTD(self.array,self.display,self.clock,self.fps)
-        method.main()
-        
-    def radixlsd(self):
-        method = RadixLSD(self.array,self.display,self.clock,self.fps)
-        method.main()
-        
-    def counting(self):
-        method = Counting(self.array,self.display,self.clock,self.fps)
-        method.main()
+    bubble = lambda self: Bubble(self.array,self.display,self.clock,self.fps).main()
+    quicksort = lambda self: Quicksort(self.array,self.display,self.clock,self.fps).main()
+    insertion = lambda self: Insertion(self.array,self.display,self.clock,self.fps).main()
+    cocktail = lambda self: Cocktail(self.array,self.display,self.clock,self.fps).main() 
+    bogo = lambda self: Bogo(self.array,self.display,self.clock,self.fps).main()
+    oddeven = lambda self: Oddeven(self.array,self.display,self.clock,self.fps).main()
+    shell = lambda self: Shell(self.array,self.display,self.clock,self.fps).main()
+    comb = lambda self: Comb(self.array,self.display,self.clock,self.fps).main()
+    gnome = lambda self: Gnome(self.array,self.display,self.clock,self.fps).main()
+    mergetd = lambda self: MergeTD(self.array,self.display,self.clock,self.fps).main()
+    radixlsd = lambda self: RadixLSD(self.array,self.display,self.clock,self.fps).main()
+    counting = lambda self: Counting(self.array,self.display,self.clock,self.fps).main()
+    cycle = lambda self: Cycle(self.array,self.display,self.clock,self.fps).main()

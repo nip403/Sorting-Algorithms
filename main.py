@@ -76,6 +76,8 @@ def main():
                     for name,func in keys.items():
                         if current == name:
                             func()
+                            
+                            pygame.time.wait(500)
                         
                 else:
                     current = chr(event.key)

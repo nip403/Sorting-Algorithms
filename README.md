@@ -12,16 +12,17 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 # Currently Supported Algorithms
 - Quicksort
 - Bubble Sort
-- Insertion Sort
+- Selection Sort
 - Cocktail Shaker Sort
 - Bogo Sort
 - Odd-Even Sort
 - Shellsort
 - Comb Sort
-- Gnome Sort
+- Insertion Sort
 - Merge Sort (TopDOwn, out of place)
 - Radix Sort (LSD, base 256)
 - Counting Sort
+- Cycle Sort
 
 # To-do List
 - Merge Sort (BottomUp)
@@ -31,3 +32,4 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Library Sort
 - Bitonic Sort
 - Radix Sort (MSD)
+- Gnome Sort

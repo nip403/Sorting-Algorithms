@@ -32,7 +32,7 @@ class Shell:
                 self.accesses += 1
 
                 self.display.events()
-                self.display.draw(self.array,j,i,gap,j-gap)
+                self.display.draw(self.array,j,i,j-gap)
                 self.display.draw_other(self.accesses,self.comparisons)
 
                 pygame.display.flip()

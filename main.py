@@ -39,7 +39,8 @@ def main():
         "Merge (TD) Sort: 'm'",
         "Radix (LSD) Sort: 'r'",
         "Counting Sort: 'x'",
-        "Cycle Sort: 'y'"
+        "Cycle Sort: 'y'",
+        "Heap Sort: 'h'"
     ])]
     
     keys = {
@@ -55,7 +56,8 @@ def main():
         "m":M.mergetd,
         "r":M.radixlsd,
         "x":M.counting,
-        "y":M.cycle
+        "y":M.cycle,
+        "h":M.heap
     }
 
     current = ""

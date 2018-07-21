@@ -23,10 +23,10 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Radix Sort (LSD, base 256)
 - Counting Sort
 - Cycle Sort
+- Heap Sort
 
 # To-do List
 - Merge Sort (BottomUp)
-- Heap Sort
 - Introsort
 - Binary Tree Sort
 - Library Sort

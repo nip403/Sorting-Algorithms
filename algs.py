@@ -17,7 +17,7 @@ from Heap import Heap
 from Circle import Circle
 from Gnome import Gnome
 from BinaryInsertion import BinaryInsertion
-form Pancake import Pancake
+from Pancake import Pancake
 
 import pygame
 import random

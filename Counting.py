@@ -21,7 +21,7 @@ class Counting:
             self.accesses += 2
 
         output = [0] * len(self.array)
-        self.accesses += 4*len(self.array) + len(count)
+        self.accesses += 5
 
         for i in range(len(self.array)):
             self.clock.tick(self.fps)

@@ -24,6 +24,8 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Cycle Sort
 - Heap Sort
 - Circle Sort
+- Gnome Sort
+- Binary Insertion Sort
 
 # To-do List
 - Merge Sort (BottomUp)
@@ -32,4 +34,3 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Library Sort
 - Bitonic Sort
 - Radix Sort (MSD)
-- Gnome Sort

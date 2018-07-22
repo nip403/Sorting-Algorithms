@@ -12,16 +12,15 @@ class Pancake:
     def main(self):
         for pan in range(len(self.array),1,-1):
             self.clock.tick(self.fps)
-            self.clock.tick(10)
             big = max(range(pan),key=self.array.__getitem__)
 
             if not big + 1 == pan:
                 if not big == 0:
-                    self.array[:big+1] = reversed(self.array[:big+1])
-                self.array[:pan] = reversed(self.array[:pan])
+                    self.array[:big+1] = self.array[:big+1][::-1]
+                self.array[:pan] = self.array[:pan][::-1]
 
             self.display.events()
-            self.display.draw(self.array,fill=[0,pan])
+            self.display.draw(self.array,*range(pan))
             self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()

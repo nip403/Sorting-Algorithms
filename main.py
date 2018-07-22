@@ -43,7 +43,8 @@ def main():
         "Heap Sort: 'h'",
         "Circle Sort: 'w'",
         "Gnome Sort: 'g'",
-        "Binary Insertion Sort: 'u'"
+        "Binary Insertion Sort: 'u'",
+        "Pancake Sort: 'p'"
     ])]
     
     keys = {
@@ -63,7 +64,8 @@ def main():
         "h":M.heap,
         "w":M.circle,
         "g":M.gnome,
-        "u":M.binaryinsertion
+        "u":M.binaryinsertion,
+        "p":M.pancake
     }
 
     current = ""

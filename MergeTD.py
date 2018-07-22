@@ -12,12 +12,12 @@ class MergeTD:
     def m(self,array,i0,i1):
         self.clock.tick(self.fps)
 
-        self.accesses += len(self.array)
+        self.accesses += 1
         self.comparisons += 1
         if len(array) <= 1:
             return array,i0,i1
 
-        self.accesses += len(array)*4 + 2
+        self.accesses += 6
         left,l0,l1 = self.m(array[:len(array)//2],i0,i0+(len(array)//2))
         right,r0,r1 = self.m(array[len(array)//2:],i0+(len(array)//2),i1)
 
@@ -29,7 +29,7 @@ class MergeTD:
             self.clock.tick(self.fps)
             
             self.comparisons += len(total)
-            self.accesses += len(total) + len(new) + 5
+            self.accesses += len(total) + 5
 
             lowest = min(total)
             self.array[l0+len(new)] = lowest

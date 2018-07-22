@@ -12,6 +12,7 @@ class Cocktail:
     def main(self):
         base = 0
         
+        self.accesses += len(self.array)
         for k in range(len(self.array)-1,0,-1):
             swapped = False
 

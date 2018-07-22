@@ -18,6 +18,7 @@ from Circle import Circle
 from Gnome import Gnome
 from BinaryInsertion import BinaryInsertion
 from Pancake import Pancake
+from Permutation import Permutation
 
 import pygame
 import random
@@ -59,3 +60,4 @@ class methods:
     gnome = lambda self: Gnome(self.array,self.display,self.clock,self.fps).main()
     binaryinsertion = lambda self: BinaryInsertion(self.array,self.display,self.clock,self.fps).main()
     pancake = lambda self: Pancake(self.array,self.display,self.clock,self.fps).main()
+    permutation = lambda self: Permutation(self.array,self.display,self.clock,self.fps).main()

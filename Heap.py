@@ -40,11 +40,11 @@ class Heap:
         return array
 
     def main(self):
-        self.accesses += len(self.array)
+        self.accesses += 1
         for start in range(int((len(self.array)-2)/2),-1,-1):
             self.clock.tick(self.fps)
             
-            self.accesses += len(self.array)
+            self.accesses += 1
             self.array = self.siftdown(self.array,start,len(self.array)-1)
 
             self.display.events()
@@ -53,7 +53,7 @@ class Heap:
             
             pygame.display.flip()
 
-        self.accesses += len(self.array)
+        self.accesses += 1
         for end in range(len(self.array)-1,0,-1):
             self.clock.tick(self.fps)
             

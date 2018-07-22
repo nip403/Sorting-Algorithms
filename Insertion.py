@@ -11,17 +11,31 @@ class Insertion:
 
     def main(self):
         self.accesses += 1
-        for p in range(1,len(self.array)):
-            while p > 0 and self.array[p-1] > self.array[p]:
+        for i in range(1,len(self.array)):
+            j = i-1
+            key = self.array[i]
+            self.accesses += 1
+            
+            while j >= 0 and self.array[j] > key:
                 self.clock.tick(self.fps)
                 
-                self.array[p],self.array[p-1] = self.array[p-1],self.array[p]
-                p -= 1
-                self.accesses += 6
+                self.array[j+1] = self.array[j]
+                j -= 1
+                
+                self.accesses += 4
                 self.comparisons += 2
 
                 self.display.events()
-                self.display.draw(self.array,p,p-1)
+                self.display.draw(self.array,i,j,j+1)
                 self.display.draw_other(self.accesses,self.comparisons)
 
                 pygame.display.flip()
+
+            self.array[j+1] = key
+            self.accesses += 1
+
+            self.display.events()
+            self.display.draw(self.array,i,j,j+1)
+            self.display.draw_other(self.accesses,self.comparisons)
+
+            pygame.display.flip()

@@ -31,7 +31,7 @@ class Counting:
             self.accesses += 6 + len(self.array)
 
             self.display.events()
-            drawable = [output[i] if output[i] else self.array[i] for i in range(len(self.array))]
+            drawable = [output[i] if (output[i] or i == 0) else self.array[i] for i in range(len(self.array))]
             self.display.draw(drawable,self.array[i],count[self.array[i]])
             self.display.draw_other(self.accesses,self.comparisons)
 

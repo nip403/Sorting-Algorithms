@@ -17,6 +17,7 @@ from Heap import Heap
 from Circle import Circle
 from Gnome import Gnome
 from BinaryInsertion import BinaryInsertion
+form Pancake import Pancake
 
 import pygame
 import random
@@ -57,3 +58,4 @@ class methods:
     circle = lambda self: Circle(self.array,self.display,self.clock,self.fps).main()
     gnome = lambda self: Gnome(self.array,self.display,self.clock,self.fps).main()
     binaryinsertion = lambda self: BinaryInsertion(self.array,self.display,self.clock,self.fps).main()
+    pancake = lambda self: Pancake(self.array,self.display,self.clock,self.fps).main()

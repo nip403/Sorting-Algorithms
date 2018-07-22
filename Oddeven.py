@@ -14,7 +14,7 @@ class Oddeven:
             done = True
 
             for e in reversed(range(2)):
-                self.accesses += len(self.array)
+                self.accesses += 1
                 
                 for i in range(e,len(self.array)-1,2):
                     self.clock.tick(self.fps)

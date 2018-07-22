@@ -27,6 +27,7 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Gnome Sort
 - Binary Insertion Sort
 - Pancake Sort
+- Permutation Sort
 
 # To-do List
 - Merge Sort (BottomUp)

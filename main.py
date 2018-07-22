@@ -4,7 +4,7 @@ import pygame
 import random
 import sys
 
-arr_length = 500
+arr_length = 100
 fps = 0
 draw_bars = True
 
@@ -43,7 +43,7 @@ def main():
         "Heap Sort: 'h'",
         "Circle Sort: 'w'",
         "Gnome Sort: 'g'",
-        "Binary Insertion Sort: 'o'"
+        "Binary Insertion Sort: 'u'"
     ])]
     
     keys = {
@@ -62,7 +62,7 @@ def main():
         "y":M.cycle,
         "h":M.heap,
         "w":M.circle,
-        "o":M.binaryinsertion
+        "u":M.binaryinsertion
     }
 
     current = ""

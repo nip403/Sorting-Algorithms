@@ -12,7 +12,7 @@ class MergeTD:
     def m(self,array,i0,i1):
         self.clock.tick(self.fps)
 
-        sself.accesses += len(self.array)
+        self.accesses += len(self.array)
         self.comparisons += 1
         if len(array) <= 1:
             return array,i0,i1

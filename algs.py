@@ -15,6 +15,8 @@ from Counting import Counting
 from Cycle import Cycle
 from Heap import Heap
 from Circle import Circle
+from Gnome import Gnome
+from BinaryInsertion import BinaryInsertion
 
 import pygame
 import random
@@ -53,3 +55,5 @@ class methods:
     cycle = lambda self: Cycle(self.array,self.display,self.clock,self.fps).main()
     heap = lambda self: Heap(self.array,self.display,self.clock,self.fps).main()
     circle = lambda self: Circle(self.array,self.display,self.clock,self.fps).main()
+    gnome = lambda self: Gnome(self.array,self.display,self.clock,self.fps).main()
+    binaryinsertion = lambda self: BinaryInsertion(self.array,self.display,self.clock,self.fps).main()

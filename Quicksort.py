@@ -46,4 +46,5 @@ class Quicksort:
             self.qs(array,pivot+1,last)
             
     def main(self):
+        self.accesses += len(self.array)
         self.qs(self.array,0,len(self.array)-1)

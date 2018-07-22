@@ -10,10 +10,12 @@ class Selection:
         self.comparisons = 0
 
     def main(self):
+        self.accesses += len(self.array)
         for i in range(0,len(self.array)-1):
             min_pos = i
             self.accesses += 1
 
+            self.accesses += len(self.array)
             for j in range(i+1,len(self.array)):
                 self.clock.tick(self.fps)
                 self.accesses += 1

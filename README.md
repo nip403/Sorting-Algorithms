@@ -23,6 +23,7 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Counting Sort
 - Cycle Sort
 - Heap Sort
+- Circle Sort
 
 # To-do List
 - Merge Sort (BottomUp)

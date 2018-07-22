@@ -10,7 +10,7 @@ class Insertion:
         self.comparisons = 0
 
     def main(self):
-        self.accesses += len(self.array)
+        self.accesses += 1
         for p in range(1,len(self.array)):
             while p > 0 and self.array[p-1] > self.array[p]:
                 self.clock.tick(self.fps)

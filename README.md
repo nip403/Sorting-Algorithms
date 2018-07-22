@@ -1,4 +1,4 @@
-f# Sorting-Algorithms
+# Sorting-Algorithms
 A visual representation of sorting algorithms in Python 3.x using the Pygame library.\
 To run, open main.py.
 
@@ -28,11 +28,10 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Binary Insertion Sort
 - Pancake Sort
 - Permutation Sort
+- Strand Sort
 
 # To-do List
 - Merge Sort (BottomUp)
-- Introsort
-- Binary Tree Sort
-- Library Sort
 - Bitonic Sort
 - Radix Sort (MSD)
+- Quicksort (2 pivots)

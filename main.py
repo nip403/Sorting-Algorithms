@@ -62,6 +62,7 @@ def main():
         "y":M.cycle,
         "h":M.heap,
         "w":M.circle,
+        "g":M.gnome,
         "u":M.binaryinsertion
     }
 

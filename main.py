@@ -33,7 +33,7 @@ def main():
         "Cocktail Shaker Sort: 'c'",
         "Bogo Sort: 'j'",
         "Odd-Even Sort: 'o'",
-        "Shell Sort: 'g'",
+        "Shell Sort: 'k'",
         "Comb Sort: 'l'",
         "Insertion Sort: 'i'",
         "Merge (TD) Sort: 'm'",
@@ -41,7 +41,9 @@ def main():
         "Counting Sort: 'x'",
         "Cycle Sort: 'y'",
         "Heap Sort: 'h'",
-        "Circle Sort: 'w'"
+        "Circle Sort: 'w'",
+        "Gnome Sort: 'g'",
+        "Binary Insertion Sort: 'o'"
     ])]
     
     keys = {
@@ -51,7 +53,7 @@ def main():
         "c":M.cocktail,
         "j":M.bogo,
         "o":M.oddeven,
-        "g":M.shell,
+        "k":M.shell,
         "l":M.comb,
         "i":M.insertion,
         "m":M.mergetd,
@@ -59,7 +61,8 @@ def main():
         "x":M.counting,
         "y":M.cycle,
         "h":M.heap,
-        "w":M.circle
+        "w":M.circle,
+        "o":M.binaryinsertion
     }
 
     current = ""

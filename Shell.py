@@ -10,6 +10,7 @@ class Shell:
         self.comparisons = 0
 
     def main(self):
+        self.accesses += len(self.array)
         n = len(self.array)
         gap = n//2
 

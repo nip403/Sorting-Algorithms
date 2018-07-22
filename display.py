@@ -9,12 +9,12 @@ class Display:
         self.surface = surface
         self.font = font
 
-    def draw(self,array,*highlighted,background=(0,0,0)):
+    def draw(self,array,*highlighted,background=(0,0,0),fill=[-1,-1]):
         self.surface.fill(background)
 
         for index,item in enumerate(array):
             if self.bars:
-                pygame.draw.rect(self.surface,self.base_colour if not index in highlighted else self.sorting_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
+                pygame.draw.rect(self.surface,self.base_colour if not (index in highlighted or fill[0] <= index <= fill[1]) else self.sorting_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
             else:
                 pygame.draw.circle(self.surface,self.base_colour if not index in highlighted else self.sorting_colour,list(map(int,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1])))),1,0)
                    

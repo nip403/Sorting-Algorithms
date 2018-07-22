@@ -14,6 +14,7 @@ from RadixLSD import RadixLSD
 from Counting import Counting
 from Cycle import Cycle
 from Heap import Heap
+from Circle import Circle
 
 import pygame
 import random
@@ -51,3 +52,4 @@ class methods:
     counting = lambda self: Counting(self.array,self.display,self.clock,self.fps).main()
     cycle = lambda self: Cycle(self.array,self.display,self.clock,self.fps).main()
     heap = lambda self: Heap(self.array,self.display,self.clock,self.fps).main()
+    circle = lambda self: Circle(self.array,self.display,self.clock,self.fps).main()

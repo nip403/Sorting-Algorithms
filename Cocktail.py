@@ -31,6 +31,7 @@ class Cocktail:
                 self.display.draw_other(self.accesses,self.comparisons)
 
                 pygame.display.flip()
+            base += 1
 
             for i in range(base,k):
                 self.clock.tick(self.fps)
@@ -48,6 +49,5 @@ class Cocktail:
 
                 pygame.display.flip()
 
-            base += 1
             if not swapped:
                 return

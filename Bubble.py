@@ -12,6 +12,7 @@ class Bubble:
     def main(self):
         pos = 0
         lim = len(self.array)-1
+        self.accesses += len(self.array)
         changed = False
 
         while True:

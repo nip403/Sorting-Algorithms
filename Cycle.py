@@ -10,12 +10,12 @@ class Cycle:
         self.comparisons = 0
 
     def main(self):
-        self.accesses += len(self.array)
+        self.accesses += 1
         for i in range(len(self.array)-1):
             self.clock.tick(self.fps)
             
             item = self.array[i]
-            self.accesses += len(self.array) + 1
+            self.accesses += 2
             pos = i
            
             for j in range(i+1,len(self.array)):

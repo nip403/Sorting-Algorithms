@@ -40,7 +40,7 @@ class Heap:
         return array
 
     def main(self):
-        self.accesses += len(self.accesses)
+        self.accesses += len(self.array)
         for start in range(int((len(self.array)-2)/2),-1,-1):
             self.clock.tick(self.fps)
             

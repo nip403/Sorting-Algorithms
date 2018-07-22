@@ -11,7 +11,7 @@ class Counting:
 
     def main(self):
         count = [0] * len(self.array)
-
+       
         for i in range(0,len(self.array)):
             count[self.array[i]] += 1
             self.accesses += 2
@@ -21,13 +21,14 @@ class Counting:
             self.accesses += 2
 
         output = [0] * len(self.array)
+        self.accesses += 4*len(self.array) + len(count)
 
         for i in range(len(self.array)):
             self.clock.tick(self.fps)
             
             output[count[self.array[i]] - 1] = self.array[i]
             count[self.array[i]] -= 1
-            self.accesses += 6
+            self.accesses += 6 + len(self.array)
 
             self.display.events()
             drawable = [output[i] if output[i] else self.array[i] for i in range(len(self.array))]

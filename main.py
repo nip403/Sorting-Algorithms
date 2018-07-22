@@ -40,7 +40,8 @@ def main():
         "Radix (LSD) Sort: 'r'",
         "Counting Sort: 'x'",
         "Cycle Sort: 'y'",
-        "Heap Sort: 'h'"
+        "Heap Sort: 'h'",
+        "Circle Sort: 'w'"
     ])]
     
     keys = {
@@ -57,7 +58,8 @@ def main():
         "r":M.radixlsd,
         "x":M.counting,
         "y":M.cycle,
-        "h":M.heap
+        "h":M.heap,
+        "w":M.circle
     }
 
     current = ""

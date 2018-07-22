@@ -1,4 +1,4 @@
-# Sorting-Algorithms
+f# Sorting-Algorithms
 A visual representation of sorting algorithms in Python 3.x using the Pygame library.\
 To run, open main.py.
 
@@ -8,7 +8,7 @@ Download project and run main.py to use.\
 Python 3.x and Pygame 1.7.x or above is required.\
 You can download pygame either [here](https://www.pygame.org/download.shtml) or [here](https://bitbucket.org/pygame/pygame/downloads/).
 
-# Currently Supported Algorithms
+# Finished Algorithms
 - Quicksort
 - Bubble Sort
 - Selection Sort

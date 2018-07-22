@@ -18,7 +18,7 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Shellsort
 - Comb Sort
 - Insertion Sort
-- Merge Sort (TopDOwn, out of place)
+- Merge Sort (TopDown, out of place)
 - Radix Sort (LSD, base 256)
 - Counting Sort
 - Cycle Sort

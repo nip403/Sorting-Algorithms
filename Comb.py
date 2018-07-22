@@ -22,6 +22,7 @@ class Comb:
             elif gap < 1:
                 gap = 1
 
+            self.accesses += len(self.array)
             for i in range(int(len(self.array)-gap)):
                 self.clock.tick(self.fps)
                 

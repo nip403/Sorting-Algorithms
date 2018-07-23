@@ -8,12 +8,16 @@ class MergeTD:
         self.fps = fps
         self.accesses = 0
         self.comparisons = 0
+
+        self.green = []
         
     def m(self,array,i0,i1):
         self.clock.tick(self.fps)
+        final = len(array) == len(self.array)
 
         self.accesses += 1
         self.comparisons += 1
+        
         if len(array) <= 1:
             return array,i0,i1
 
@@ -22,46 +26,27 @@ class MergeTD:
         right,r0,r1 = self.m(array[len(array)//2:],i0+(len(array)//2),i1)
 
         new = []
-        while len(left) and len(right):
+        total = left + right
+        
+        while len(total):
             self.clock.tick(self.fps)
             
             self.comparisons += 3
             self.accesses += 5
 
-            if left[0] < right[0]:
-                tmp = left.pop(0)
-                new.append(tmp)
-            else:
-                tmp = right.pop(0)
-                new.append(tmp)
+            new.append(min(total))
+            self.array[l0+len(new)-1] = min(total)
+            del total[total.index(min(total))]
 
-            self.array[l0+len(new)-1] = tmp
+            if final:
+                self.green.append(len(self.green))
+                self.display.add_green(self.green)
 
             self.display.events()
             self.display.draw(self.array,i0,i1,l0,l1,r0,r1,l0+len(new)-1)
             self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()
-
-        while len(left) or len(right):
-            self.clock.tick(self.fps)
-            
-            try:
-                tmp = left.pop(0)
-            except:
-                tmp = right.pop(0)
-            finally:
-                self.accesses += 1
-                self.comparisons += 2
-                
-                new.append(tmp)
-                self.array[l0+len(new)-1] = tmp
-
-                self.display.events()
-                self.display.draw(self.array,i0,i1,l0,l1,r0,r1,l0+len(new)-1)
-                self.display.draw_other(self.accesses,self.comparisons)
-
-                pygame.display.flip()
 
         return new,l0,r1
 

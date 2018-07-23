@@ -1,4 +1,5 @@
 from algs import methods
+form showarr import Show_array
 
 import pygame
 import random
@@ -9,7 +10,6 @@ fps = 0
 draw_bars = True
 
 s = [1000,700]
-bar_thickness = s[0]/arr_length
 
 pygame.init()
 screen = pygame.display.set_mode(s,0,32)
@@ -19,14 +19,19 @@ pygame.display.set_caption("Sorting Algorithms by NIP")
 bigfont = pygame.font.SysFont("Garamond MS",140)
 medfont = pygame.font.SysFont("Garamond MS",40)
 smallfont = pygame.font.SysFont("Garamond MS",20)
+labels = pygame.font.SysFont("comicsansms",20)
 
 def main():
+    global arr_length
+
     M = methods(fps,arr_length,clock,screen,smallfont,draw_bars)
     
     head1 = medfont.render("Enter Sorting Type:",True,(255,255,255))
     head2 = medfont.render("Types:",True,(255,255,255))
+    head3 = medfont.render("Array:",True,(255,255,255))
 
-    typelist = [[smallfont.render(i,True,(255,255,255)),[120,275+(p*15)]] for p,i in enumerate([
+    show = Show_array(arr_length,(300,200))
+    typelist = [[labels.render(i,True,(255,255,255)),[120,240+(p*20)]] for p,i in enumerate([
         "Bubble Sort: 'b'",
         "Quick Sort: 'q'",
         "Selection Sort: 's'",
@@ -48,54 +53,60 @@ def main():
         "Permutation Sort: 'd'",
         "Strand Sort: 'n'"
     ])]
-    
-    keys = {
-        "q":M.quicksort,
-        "b":M.bubble,
-        "s":M.selection,
-        "c":M.cocktail,
-        "j":M.bogo,
-        "o":M.oddeven,
-        "k":M.shell,
-        "l":M.comb,
-        "i":M.insertion,
-        "m":M.mergetd,
-        "r":M.radixlsd,
-        "x":M.counting,
-        "y":M.cycle,
-        "h":M.heap,
-        "w":M.circle,
-        "g":M.gnome,
-        "u":M.binaryinsertion,
-        "p":M.pancake,
-        "d":M.permutation,
-        "n":M.strand
-    }
 
     current = ""
 
     while True:
+        clock.tick(15)
+        
         screen.fill((0,0,0))
+        M = methods(fps,arr_length,clock,screen,smallfont,draw_bars)
+        M.setup(s[0]/arr_length,s)
+        keys = {"q":M.quicksort,"b":M.bubble,"s":M.selection,"c":M.cocktail,"j":M.bogo,"o":M.oddeven,"k":M.shell,"l":M.comb,"i":M.insertion,"m":M.mergetd,"r":M.radixlsd,"x":M.counting,"y":M.cycle,"h":M.heap,"w":M.circle,"g":M.gnome,"u":M.binaryinsertion,"p":M.pancake,"d":M.permutation,"n":M.strand}
         
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RETURN:
-
-                    M.setup(bar_thickness,s)
-                    
+                if event.key == pygame.K_RETURN:                    
                     for name,func in keys.items():
                         if current == name:
                             func()
                             
                             pygame.time.wait(500)
-                        
+                    
                 else:
                     current = chr(event.key)
 
+        if pygame.key.get_pressed()[pygame.K_UP]:
+            arr_length += 10
+            show = Show_array(arr_length,(300,200))
+
+        if pygame.key.get_pressed()[pygame.K_RIGHT]:
+            arr_length += 1
+            show = Show_array(arr_length,(300,200))
+
+        if pygame.key.get_pressed()[pygame.K_DOWN]:
+            arr_length -= 10
+
+            if arr_length < 2:
+                arr_length = 2
+            
+            show = Show_array(arr_length,(300,200))
+
+        if pygame.key.get_pressed()[pygame.K_LEFT]:
+            arr_length -= 11
+
+            if arr_length < 2:
+                arr_length = 2
+            
+            show = Show_array(arr_length,(300,200))
+
         screen.blit(head1,(50,50))
-        screen.blit(head2,(50,220))
+        screen.blit(head2,(50,200))
+        screen.blit(head3,(750,140))
+
+        show.draw(screen,[640,200],[740,440],labels)
 
         for i in typelist:
             screen.blit(i[0],i[1])

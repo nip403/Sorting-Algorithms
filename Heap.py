@@ -61,8 +61,8 @@ class Heap:
             self.array = self.siftdown(self.array,0,end-1)
 
             self.display.events()
+            self.display.add_green([self.array.index(i) for i in self.array[end-1:]])
             self.display.draw(self.array,end)
             self.display.draw_other(self.accesses,self.comparisons)
             
             pygame.display.flip()
-    

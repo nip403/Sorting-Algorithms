@@ -45,7 +45,8 @@ def main():
         "Gnome Sort: 'g'",
         "Binary Insertion Sort: 'u'",
         "Pancake Sort: 'p'",
-        "Permutation Sort: 'd'"
+        "Permutation Sort: 'd'",
+        "Strand Sort: 'n'"
     ])]
     
     keys = {
@@ -67,7 +68,8 @@ def main():
         "g":M.gnome,
         "u":M.binaryinsertion,
         "p":M.pancake,
-        "d":M.permutation
+        "d":M.permutation,
+        "n":M.strand
     }
 
     current = ""

@@ -4,17 +4,33 @@ class Display:
     def __init__(self,bar_thickness,windowsize,surface,font):
         self.base_colour = (255,255,255)
         self.sorting_colour = (255,0,0)
+        self.done_colour = (0,255,0)
+        
         self.thickness = bar_thickness
         self.s = windowsize
         self.surface = surface
         self.font = font
+
+        self.green = []
+
+    def add_green(self,arr):
+        self.green = arr
 
     def draw(self,array,*highlighted,background=(0,0,0)):
         self.surface.fill(background)
 
         for index,item in enumerate(array):
             if self.bars:
-                pygame.draw.rect(self.surface,self.base_colour if not index in highlighted else self.sorting_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
+                draw = False
+                
+                if index in self.green:
+                    pygame.draw.rect(self.surface,self.done_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
+                    draw = True
+        
+                if index in highlighted:
+                    pygame.draw.rect(self.surface,self.sorting_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
+                elif not draw:
+                    pygame.draw.rect(self.surface,self.base_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
             else:
                 pygame.draw.circle(self.surface,self.base_colour if not index in highlighted else self.sorting_colour,list(map(int,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1])))),1,0)
                    

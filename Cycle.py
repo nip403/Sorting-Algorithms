@@ -45,13 +45,14 @@ class Cycle:
                     if self.array[j] < item:
                         pos += 1
 
-                    self.accesses += len(self.array) + 1
+                    self.accesses += 2
                     self.comparisons += 1
 
                 self.array[pos],item = item,self.array[pos]
                 self.accesses += 1
 
                 self.display.events()
+                self.display.add_green([p for p,m in enumerate(self.array) if m == sorted(self.array)[p]])
                 self.display.draw(self.array,i,j,pos)
                 self.display.draw_other(self.accesses,self.comparisons)
 

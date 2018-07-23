@@ -19,6 +19,7 @@ from Gnome import Gnome
 from BinaryInsertion import BinaryInsertion
 from Pancake import Pancake
 from Permutation import Permutation
+from Strand import Strand
 
 import pygame
 import random
@@ -61,3 +62,4 @@ class methods:
     binaryinsertion = lambda self: BinaryInsertion(self.array,self.display,self.clock,self.fps).main()
     pancake = lambda self: Pancake(self.array,self.display,self.clock,self.fps).main()
     permutation = lambda self: Permutation(self.array,self.display,self.clock,self.fps).main()
+    strand = lambda self: Strand(self.array,self.display,self.clock,self.fps).main()

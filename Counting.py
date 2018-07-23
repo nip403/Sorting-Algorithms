@@ -31,8 +31,8 @@ class Counting:
             self.accesses += 6 + len(self.array)
 
             self.display.events()
-            drawable = [output[i] if (output[i] or i == 0) else self.array[i] for i in range(len(self.array))]
-            self.display.draw(drawable,self.array[i],count[self.array[i]])
+            self.display.add_green([p for p,i in enumerate(output) if i == sorted(self.array)[p]])
+            self.display.draw([output[i] if (output[i] or i == 0) else self.array[i] for i in range(len(self.array))],self.array[i],count[self.array[i]])
             self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()

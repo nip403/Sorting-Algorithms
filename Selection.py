@@ -26,6 +26,7 @@ class Selection:
                 self.accesses += 2
 
                 self.display.events()
+                self.display.add_green([self.array.index(i) for i in self.array[:i]])
                 self.display.draw(self.array,j,min_pos,i)
                 self.display.draw_other(self.accesses,self.comparisons)
 
@@ -35,6 +36,7 @@ class Selection:
             self.accesses += 4
 
             self.display.events()
+            self.display.add_green([self.array.index(i) for i in self.array[:i]])
             self.display.draw(self.array,j,min_pos,i)
             self.display.draw_other(self.accesses,self.comparisons)
 

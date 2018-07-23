@@ -13,6 +13,9 @@ class Strand:
         out = []
 
         while len(a) and len(b):
+            self.accesses += 5
+            self.comparisons += 3
+            
             out.append((a if a[0] < b[0] else b).pop(0))
 
         return out+a+b
@@ -21,22 +24,44 @@ class Strand:
         i = 0
         s = [arr.pop(0)]
 
+        self.accesses += 1
+
         while i < len(arr):
             if arr[i] > s[-1]:
                 s.append(arr.pop(i))
             else:
                 i += 1
 
+            self.accesses += 4
+            self.comparisons += 2
+
         return s
+
+    def make_output(self,correct,remaining):
+        self.pos = [p for p,i in enumerate(remaining) if i in correct]
+        return correct + [i for p,i in enumerate(remaining) if not p in self.pos]
 
     def main(self):
         array = self.array[:]
         out = self.strand(array)
 
-        while len(array):
-            self.clock.tick(self.fps)
-            
-            out = self.merge(out,self.strand(array))
+        self.display.events()
+        self.display.draw(self.array,*range(len(self.array)))
+        self.display.draw_other(self.accesses,self.comparisons)
 
-            self.display.draw(out)
+        pygame.display.flip()
+
+        while len(array):
+            self.accesses += 1
+            self.comparisons += 1
+            
+            self.clock.tick(self.fps)
+            out = self.merge(out,self.strand(array))
+            final_output = self.make_output(out,self.array)
+
+            self.display.events()
+            self.display.add_green(self.pos)
+            self.display.draw(final_output,*[p for p,i in enumerate(self.array) if not p in self.pos])
+            self.display.draw_other(self.accesses,self.comparisons)
+            
             pygame.display.flip()

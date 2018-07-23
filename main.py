@@ -1,21 +1,25 @@
 from algs import methods
-form showarr import Show_array
+from showarr import Show_array
 
 import pygame
 import random
 import sys
 
+# Options
 arr_length = 100
 fps = 0
 draw_bars = True
 
+# Window dimensions
 s = [1000,700]
 
+# Initialisations
 pygame.init()
 screen = pygame.display.set_mode(s,0,32)
 clock = pygame.time.Clock()
 pygame.display.set_caption("Sorting Algorithms by NIP")
 
+# Fonts
 bigfont = pygame.font.SysFont("Garamond MS",140)
 medfont = pygame.font.SysFont("Garamond MS",40)
 smallfont = pygame.font.SysFont("Garamond MS",20)
@@ -24,6 +28,7 @@ labels = pygame.font.SysFont("comicsansms",20)
 def main():
     global arr_length
 
+    # Initialisations
     M = methods(fps,arr_length,clock,screen,smallfont,draw_bars)
     
     head1 = medfont.render("Enter Sorting Type:",True,(255,255,255))
@@ -57,13 +62,10 @@ def main():
     current = ""
 
     while True:
+        # Frame Rate
         clock.tick(15)
-        
-        screen.fill((0,0,0))
-        M = methods(fps,arr_length,clock,screen,smallfont,draw_bars)
-        M.setup(s[0]/arr_length,s)
-        keys = {"q":M.quicksort,"b":M.bubble,"s":M.selection,"c":M.cocktail,"j":M.bogo,"o":M.oddeven,"k":M.shell,"l":M.comb,"i":M.insertion,"m":M.mergetd,"r":M.radixlsd,"x":M.counting,"y":M.cycle,"h":M.heap,"w":M.circle,"g":M.gnome,"u":M.binaryinsertion,"p":M.pancake,"d":M.permutation,"n":M.strand}
-        
+
+        # Event Handler
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -78,29 +80,29 @@ def main():
                 else:
                     current = chr(event.key)
 
-        if pygame.key.get_pressed()[pygame.K_UP]:
-            arr_length += 10
-            show = Show_array(arr_length,(300,200))
+        # User changes array length
+        # UP: +10
+        # DOWN: -10
+        # RIGHT: +1
+        # LEFT: -1
+        if pygame.key.get_pressed()[pygame.K_UP] or pygame.key.get_pressed()[pygame.K_DOWN] or pygame.key.get_pressed()[pygame.K_RIGHT] or pygame.key.get_pressed()[pygame.K_LEFT]:
 
-        if pygame.key.get_pressed()[pygame.K_RIGHT]:
-            arr_length += 1
-            show = Show_array(arr_length,(300,200))
+            # Re-initialise
+            M = methods(fps,arr_length,clock,screen,smallfont,draw_bars)
+            M.setup(s[0]/arr_length,s)
+            keys = {"q":M.quicksort,"b":M.bubble,"s":M.selection,"c":M.cocktail,"j":M.bogo,"o":M.oddeven,"k":M.shell,"l":M.comb,"i":M.insertion,"m":M.mergetd,"r":M.radixlsd,"x":M.counting,"y":M.cycle,"h":M.heap,"w":M.circle,"g":M.gnome,"u":M.binaryinsertion,"p":M.pancake,"d":M.permutation,"n":M.strand}
 
-        if pygame.key.get_pressed()[pygame.K_DOWN]:
-            arr_length -= 10
-
-            if arr_length < 2:
-                arr_length = 2
-            
-            show = Show_array(arr_length,(300,200))
-
-        if pygame.key.get_pressed()[pygame.K_LEFT]:
-            arr_length -= 11
+            # Change array length
+            events = pygame.key.get_pressed()
+            arr_length += (10 if events[pygame.K_UP] else (1 if events[pygame.K_RIGHT] else (-10 if events[pygame.K_DOWN] else (-1 if events[pygame.K_LEFT] else 0))))
 
             if arr_length < 2:
                 arr_length = 2
             
             show = Show_array(arr_length,(300,200))
+
+        # Drawing
+        screen.fill((0,0,0))
 
         screen.blit(head1,(50,50))
         screen.blit(head2,(50,200))

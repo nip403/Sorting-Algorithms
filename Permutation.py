@@ -22,12 +22,11 @@ class Permutation:
             self.comparisons += len(perm)-2
 
             self.display.events()
-            self.display.draw(perm,*[i for i in range(len(perm)) if not perm[i] == list(range(len(perm)))[i]])
+            self.display.add_green([i for i in range(len(perm)) if perm[i] == sorted(perm)[i]])
+            self.display.draw(perm,*[i for i in range(len(perm)) if not perm[i] == sorted(perm)[i]])
             self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()
 
             if self.ordered(perm):
                 return
-
-            

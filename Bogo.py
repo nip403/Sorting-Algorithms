@@ -23,7 +23,8 @@ class Bogo:
             random.shuffle(self.array)
 
             self.display.events()
-            self.display.draw(self.array)
+            self.display.add_green([p for p,i in enumerate(self.array) if sorted(self.array)[p] == self.array[p]])
+            self.display.draw(self.array,*[p for p,i in enumerate(self.array) if not sorted(self.array)[p] == self.array[p]])
             self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()

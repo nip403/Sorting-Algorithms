@@ -24,6 +24,7 @@ class Quicksort:
             self.comparisons += 1
 
             self.display.events()
+            self.display.add_green([p for p,i in enumerate(self.array) if sorted(self.array)[p] == i])
             self.display.draw(array,i,j,pivot)
             self.display.draw_other(self.accesses,self.comparisons)
 
@@ -32,11 +33,11 @@ class Quicksort:
         array[i+1],array[last] = array[last],array[i+1]
         self.accesses += 4
 
+        self.display.add_green([p for p,i in enumerate(self.array) if sorted(self.array)[p] == i])
         self.display.draw(array,i,j)
         self.display.draw_other(self.accesses,self.comparisons)
 
         pygame.display.flip()
-
         return i + 1
 
     def qs(self,array,first,last):

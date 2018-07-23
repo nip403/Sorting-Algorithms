@@ -30,6 +30,10 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 - Permutation Sort
 - Strand Sort
 
+# Problems
+- Fix flickering in Cycle Sort's green bars
+- Fix loading Radix LSD Sort's green bars
+
 # To-do List
 - Merge Sort (BottomUp)
 - Bitonic Sort

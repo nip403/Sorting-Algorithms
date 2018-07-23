@@ -20,8 +20,8 @@ class Pancake:
                 self.array[:pan] = self.array[:pan][::-1]
 
             self.display.events()
+            self.display.add_green([self.array.index(i) for i in self.array[pan:]])
             self.display.draw(self.array,*range(pan))
             self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()
-                

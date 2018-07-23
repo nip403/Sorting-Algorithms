@@ -21,6 +21,11 @@ class Display:
 
         for index,item in enumerate(array):
             if self.bars:
+                
+                # If bar is green: draw green bar
+                # If bar is red (regardless of green): draw red bar
+                # Else: draw white bar
+                
                 draw = False
                 
                 if index in self.green:

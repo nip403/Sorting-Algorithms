@@ -35,6 +35,7 @@ class Insertion:
             self.accesses += 1
 
             self.display.events()
+            self.display.add_green([self.array.index(t) for t in self.array[:i+2]])
             self.display.draw(self.array,i,j,j+1)
             self.display.draw_other(self.accesses,self.comparisons)
 

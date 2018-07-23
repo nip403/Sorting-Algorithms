@@ -15,8 +15,6 @@ class Show_array:
             pygame.draw.rect(self.surf,(255,255,255),(p*thick,dimensions[1]-(i/len(self.array)*dimensions[1]),thick,i/length*dimensions[1]),0)
 
     def get_speed_colour(self,length):
-        percent = (length/1000*100 if length/1000*100 <= 100 else 100)
-
         return [255 if (length/1000*100 if length/1000*100 <= 100 else 100) > 50 else int((percent*2)*255/100), 255 if (length/1000*100 if length/1000*100 <= 100 else 100) < 50 else int(255-(percent*2-100)*255/100),0]
         
     def draw(self,surface,topleft,heading,font):

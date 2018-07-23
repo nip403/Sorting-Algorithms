@@ -27,6 +27,7 @@ class Cocktail:
                 self.comparisons += 1
 
                 self.display.events()
+                self.display.add_green([self.array.index(i) for p,i in enumerate(self.array) if p > k or p <= base])
                 self.display.draw(self.array,k,i,i-1,base)
                 self.display.draw_other(self.accesses,self.comparisons)
 
@@ -44,6 +45,7 @@ class Cocktail:
                 self.comparisons += 1
 
                 self.display.events()
+                self.display.add_green([self.array.index(i) for p,i in enumerate(self.array) if p > k or p <= base])
                 self.display.draw(self.array,k,i,i-1,base)
                 self.display.draw_other(self.accesses,self.comparisons)
 

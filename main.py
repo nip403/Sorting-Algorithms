@@ -8,7 +8,7 @@ import sys
 # Options
 arr_length = 100
 fps = 0
-draw_bars = True
+draw_bars = False
 
 # Window dimensions
 s = [1000,700]
@@ -59,6 +59,27 @@ def main():
         "Strand Sort: 'n'"
     ])]
 
+    keys = {"q":M.quicksort,
+            "b":M.bubble,
+            "s":M.selection,
+            "c":M.cocktail,
+            "j":M.bogo,
+            "o":M.oddeven,
+            "k":M.shell,
+            "l":M.comb,
+            "i":M.insertion,
+            "m":M.mergetd,
+            "r":M.radixlsd,
+            "x":M.counting,
+            "y":M.cycle,
+            "h":M.heap,
+            "w":M.circle,
+            "g":M.gnome,
+            "u":M.binaryinsertion,
+            "p":M.pancake,
+            "d":M.permutation,
+            "n":M.strand}
+
     current = ""
 
     while True:
@@ -73,8 +94,8 @@ def main():
                 if event.key == pygame.K_RETURN:                    
                     for name,func in keys.items():
                         if current == name:
+                            M.setup(s[0]/arr_length,s)
                             func()
-                            
                             pygame.time.wait(500)
                     
                 else:
@@ -87,17 +108,16 @@ def main():
         # LEFT: -1
         if pygame.key.get_pressed()[pygame.K_UP] or pygame.key.get_pressed()[pygame.K_DOWN] or pygame.key.get_pressed()[pygame.K_RIGHT] or pygame.key.get_pressed()[pygame.K_LEFT]:
 
-            # Re-initialise
-            M = methods(fps,arr_length,clock,screen,smallfont,draw_bars)
-            M.setup(s[0]/arr_length,s)
-            keys = {"q":M.quicksort,"b":M.bubble,"s":M.selection,"c":M.cocktail,"j":M.bogo,"o":M.oddeven,"k":M.shell,"l":M.comb,"i":M.insertion,"m":M.mergetd,"r":M.radixlsd,"x":M.counting,"y":M.cycle,"h":M.heap,"w":M.circle,"g":M.gnome,"u":M.binaryinsertion,"p":M.pancake,"d":M.permutation,"n":M.strand}
-
             # Change array length
             events = pygame.key.get_pressed()
             arr_length += (10 if events[pygame.K_UP] else (1 if events[pygame.K_RIGHT] else (-10 if events[pygame.K_DOWN] else (-1 if events[pygame.K_LEFT] else 0))))
 
             if arr_length < 2:
                 arr_length = 2
+
+            # Re-initialise
+            M = methods(fps,arr_length,clock,screen,smallfont,draw_bars)
+            keys = {"q":M.quicksort,"b":M.bubble,"s":M.selection,"c":M.cocktail,"j":M.bogo,"o":M.oddeven,"k":M.shell,"l":M.comb,"i":M.insertion,"m":M.mergetd,"r":M.radixlsd,"x":M.counting,"y":M.cycle,"h":M.heap,"w":M.circle,"g":M.gnome,"u":M.binaryinsertion,"p":M.pancake,"d":M.permutation,"n":M.strand}
             
             show = Show_array(arr_length,(300,200))
 

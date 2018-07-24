@@ -67,6 +67,7 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
     - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n log n)`
 - Circle Sort
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
+    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n log n log n)`
     - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n log n log n)`
 - Gnome Sort
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`

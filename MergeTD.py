@@ -31,8 +31,8 @@ class MergeTD:
         while len(total):
             self.clock.tick(self.fps)
             
-            self.comparisons += 3
-            self.accesses += 5
+            self.comparisons += 4
+            self.accesses += 4
 
             new.append(min(total))
             self.array[l0+len(new)-1] = min(total)

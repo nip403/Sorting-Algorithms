@@ -93,6 +93,8 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 # Problems
 - Fix flickering in Cycle Sort's green bars
 - Fix loading Radix LSD Sort's green bars
+- Validate Circle sort's average case time complexity
+- Validate Shell sort's average and worst case time complexity
 
 # To-do List
 - Merge Sort (BottomUp)

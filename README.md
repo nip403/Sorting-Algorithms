@@ -10,9 +10,9 @@ You can download pygame either [here](https://www.pygame.org/download.shtml) or 
 
 # Finished Algorithms
 - Quicksort
-    ```diff
-    + a
-    - b
+    ```html
+    <p style='color:red'>This is some red text.</p>
+    <p style='color:green'>This is some red text.</p>
     ```
 - Bubble Sort
 - Selection Sort

@@ -1,5 +1,11 @@
 from display import Display
 
+import pygame
+import random
+import sys
+
+sys.path.insert(0,"./Algorithms")
+
 from Bubble import Bubble
 from Quicksort import Quicksort
 from Selection import Selection
@@ -20,9 +26,6 @@ from BinaryInsertion import BinaryInsertion
 from Pancake import Pancake
 from Permutation import Permutation
 from Strand import Strand
-
-import pygame
-import random
 
 class methods:
     def __init__(self,fps,length,clockObject,surface,font,bars):

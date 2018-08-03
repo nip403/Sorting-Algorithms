@@ -1,4 +1,5 @@
 import pygame
+import sys
 
 class Display:
     def __init__(self,bar_thickness,windowsize,surface,font):
@@ -57,3 +58,4 @@ class Display:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+                sys.exit()

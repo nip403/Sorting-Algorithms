@@ -1,14 +1,11 @@
 from algs import methods
 from showarr import Show_array
-
 import pygame
-import random
-import sys
 
 # Options
 arr_length = 100
 fps = 0
-draw_bars = False
+draw_bars = True
 
 # Window dimensions
 s = [1000,700]

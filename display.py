@@ -48,8 +48,8 @@ class Display:
                     pygame.draw.circle(self.surface,self.base_colour if not index in highlighted else self.sorting_colour,list(map(int,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1])))),1,0)
                    
     def draw_other(self,accesses,comparisons):
-        a = self.font.render("Array Accesses: %s" % accesses,True,(255,0,0))
-        c = self.font.render("Array Comparisions: %s" % comparisons,True,(255,0,0))
+        a = self.font.render(f"Array Accesses: {accesses}",True,(255,0,0))
+        c = self.font.render(f"Array Comparisions: {comparisons}",True,(255,0,0))
 
         self.surface.blit(a,a.get_rect(topleft=[10,10]))
         self.surface.blit(c,c.get_rect(topleft=[10,30]))

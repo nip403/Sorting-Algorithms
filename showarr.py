@@ -19,4 +19,4 @@ class Show_array:
  
     def draw(self,surface,topleft,heading,font):
         surface.blit(self.surf,topleft)
-        surface.blit(font.render("Length: %s" % len(self.array),True,self.get_speed_colour(len(self.array))),heading)
+        surface.blit(font.render(f"Length: {len(self.array)}",True,self.get_speed_colour(len(self.array))),heading)

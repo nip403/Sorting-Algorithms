@@ -93,10 +93,15 @@ If you are running any version before 3.6, you will need to rewrite all f-string
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
     - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2)`
     - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
+- Bucket Sort
+    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n+k)`
+    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n+k)`
+    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
 
 # Problems
 - Fix flickering in Cycle Sort's green bars
 - Fix loading Radix LSD Sort's green bars
+- Fix positioning in drawing Bucket Sort's insertion sort for each bucket
 - Validate Circle sort's average case time complexity
 - Validate Shell sort's average and worst case time complexity
 

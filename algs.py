@@ -26,6 +26,7 @@ from BinaryInsertion import BinaryInsertion
 from Pancake import Pancake
 from Permutation import Permutation
 from Strand import Strand
+from Bucket import Bucket
 
 class methods:
     def __init__(self,fps,length,clockObject,surface,font,bars):
@@ -66,3 +67,4 @@ class methods:
     pancake = lambda self: Pancake(self.array,self.display,self.clock,self.fps).main()
     permutation = lambda self: Permutation(self.array,self.display,self.clock,self.fps).main()
     strand = lambda self: Strand(self.array,self.display,self.clock,self.fps).main()
+    bucket = lambda self: Bucket(self.array,self.display,self.clock,self.fps).main()

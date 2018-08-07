@@ -1,6 +1,7 @@
 from algs import methods
 from showarr import Show_array
 import pygame
+import sys
 
 # Options
 arr_length = 100
@@ -33,7 +34,7 @@ def main():
     head3 = medfont.render("Array:",True,(255,255,255))
 
     show = Show_array(arr_length,(300,200))
-    typelist = [[labels.render(i,True,(255,255,255)),[120,240+(p*20)]] for p,i in enumerate([
+    typelist = [[labels.render(i,True,(255,255,255)),[120,200+(p*20)]] for p,i in enumerate([
         "Bubble Sort: 'b'",
         "Quick Sort: 'q'",
         "Selection Sort: 's'",
@@ -53,7 +54,8 @@ def main():
         "Binary Insertion Sort: 'u'",
         "Pancake Sort: 'p'",
         "Permutation Sort: 'd'",
-        "Strand Sort: 'n'"
+        "Strand Sort: 'n'",
+        "Bucket Sort: 'v'"
     ])]
 
     keys = {"q":M.quicksort,
@@ -75,8 +77,9 @@ def main():
             "u":M.binaryinsertion,
             "p":M.pancake,
             "d":M.permutation,
-            "n":M.strand}
-
+            "n":M.strand,
+            "v":M.bucket}
+  
     current = ""
 
     while True:
@@ -113,16 +116,15 @@ def main():
                 arr_length = 2
 
             # Re-initialise
-            M = methods(fps,arr_length,clock,screen,smallfont,draw_bars)
-            keys = {"q":M.quicksort,"b":M.bubble,"s":M.selection,"c":M.cocktail,"j":M.bogo,"o":M.oddeven,"k":M.shell,"l":M.comb,"i":M.insertion,"m":M.mergetd,"r":M.radixlsd,"x":M.counting,"y":M.cycle,"h":M.heap,"w":M.circle,"g":M.gnome,"u":M.binaryinsertion,"p":M.pancake,"d":M.permutation,"n":M.strand}
-            
+            setattr(M,"length",arr_length)
+            M.setup(s[0]/arr_length,s)
             show = Show_array(arr_length,(300,200))
 
         # Drawing
         screen.fill((0,0,0))
 
         screen.blit(head1,(50,50))
-        screen.blit(head2,(50,200))
+        screen.blit(head2,(50,160))
         screen.blit(head3,(750,140))
 
         show.draw(screen,[640,200],[740,440],labels)

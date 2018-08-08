@@ -28,6 +28,7 @@ from Permutation import Permutation
 from Strand import Strand
 from Bucket import Bucket
 from MinMax import MinMax
+from MergeBU import MergeBU
 
 class methods:
     def __init__(self,fps,clockObject,surface,font,bars,windowsize):
@@ -70,3 +71,4 @@ class methods:
     strand = lambda self: Strand(self.array,self.display,self.clock,self.fps).main()
     bucket = lambda self: Bucket(self.array,self.display,self.clock,self.fps).main()
     minmax = lambda self: MinMax(self.array,self.display,self.clock,self.fps).main()
+    mergebu = lambda self: MergeBU(self.array,self.display,self.clock,self.fps).main()

@@ -77,4 +77,4 @@ class MergeBU:
     def main(self):
         self.accesses += 2
         self.comparisons == 1
-        self.sort([[self.array[i],self.array[i+1]] if i < len(self.array) else [self.array[i]] for i in range(0,len(self.array),2)])
+        self.sort([[self.array[i],self.array[i+1]] if i < len(self.array)-1 else [self.array[i]] for i in range(0,len(self.array),2)])

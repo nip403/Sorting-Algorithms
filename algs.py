@@ -30,19 +30,19 @@ from Bucket import Bucket
 from MinMax import MinMax
 
 class methods:
-    def __init__(self,fps,length,clockObject,surface,font,bars):
+    def __init__(self,fps,clockObject,surface,font,bars,windowsize):
         self.fps = fps
-        self.length = length
         self.clock = clockObject
         self.surface = surface
         self.font = font
         self.bars = bars
+        self.windowsize = windowsize
 
-    def setup(self,thickness,windowsize):
-        self.array = list(range(self.length))
+    def setup(self,length):
+        self.array = list(range(length))
         random.shuffle(self.array)
 
-        self.display = Display(thickness,windowsize,self.surface,self.font)
+        self.display = Display(self.windowsize[0]/length,self.windowsize,self.surface,self.font)
         self.accesses = 0
         self.comparisons = 0
         

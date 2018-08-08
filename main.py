@@ -55,7 +55,8 @@ def main():
         "Pancake Sort: 'p'",
         "Permutation Sort: 'd'",
         "Strand Sort: 'n'",
-        "Bucket Sort: 'v'"
+        "Bucket Sort: 'v'",
+        "MinMax Sort: 'e'"
     ])]
 
     keys = {"q":M.quicksort,
@@ -78,7 +79,8 @@ def main():
             "p":M.pancake,
             "d":M.permutation,
             "n":M.strand,
-            "v":M.bucket}
+            "v":M.bucket,
+            "e":M.minmax}
   
     current = ""
 
@@ -90,6 +92,8 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+                sys.exit()
+                
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:                    
                     for name,func in keys.items():

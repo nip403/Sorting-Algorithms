@@ -27,7 +27,7 @@ def main():
     global arr_length
 
     # Initialisations
-    M = methods(fps,arr_length,clock,screen,smallfont,draw_bars)
+    M = methods(fps,clock,screen,smallfont,draw_bars,s)
     
     head1 = medfont.render("Enter Sorting Type:",True,(255,255,255))
     head2 = medfont.render("Types:",True,(255,255,255))
@@ -98,7 +98,7 @@ def main():
                 if event.key == pygame.K_RETURN:                    
                     for name,func in keys.items():
                         if current == name:
-                            M.setup(s[0]/arr_length,s)
+                            M.setup(arr_length)
                             func()
                             pygame.time.wait(500)
                     
@@ -120,8 +120,7 @@ def main():
                 arr_length = 2
 
             # Re-initialise
-            setattr(M,"length",arr_length)
-            M.setup(s[0]/arr_length,s)
+            M.setup(arr_length)
             show = Show_array(arr_length,(300,200))
 
         # Drawing

@@ -21,7 +21,7 @@ class Pancake:
             
             if not big + 1 == pan:
                 self.accesses += 2
-                self.comparions += 1
+                self.comparisons += 1
         
                 if not big == 0:
 

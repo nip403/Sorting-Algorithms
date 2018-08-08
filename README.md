@@ -112,7 +112,7 @@ If you are running any version before 3.6, you will need to rewrite both f-strin
 - Fix positioning in drawing Bucket Sort's insertion sort for each bucket
 - Validate Circle sort's average case time complexity
 - Validate Shell sort's average and worst case time complexity
-- Validate all of Minmax Sort's time complexities (it was calculated based on the fact that it is a 2 way insertion sort)
+- Validate all of Minmax Sort's time complexities (it was calculated based on the fact that it is a 2 way selection sort)
 
 # To-do List
 - Bitonic Sort

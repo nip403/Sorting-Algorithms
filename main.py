@@ -23,6 +23,14 @@ medfont = pygame.font.SysFont("Garamond MS",40)
 smallfont = pygame.font.SysFont("Garamond MS",20)
 labels = pygame.font.SysFont("comicsansms",20)
 
+# User Instructions
+print("To select the sorting mode, press the letters under \"Types\".")
+print("To run, press ENTER.")
+print("To toggle between drawing bars and dots, press BACKSPACE.")
+print("\nTo change the list size, use either:")
+print("\tUP and DOWN arrows (these change the size by 10).")
+print("\tLEFT and RIGHT arrows (these change the size by 1).")
+
 def main():
     global arr_length
 
@@ -84,8 +92,8 @@ def main():
             "e":M.minmax,
             "t":M.mergebu
     }
-  
-    current = ""
+
+    current = "b"
 
     while True:
         # Frame Rate
@@ -104,6 +112,9 @@ def main():
                             M.setup(arr_length)
                             func()
                             pygame.time.wait(500)
+
+                elif event.key == pygame.K_BACKSPACE:
+                    setattr(M,"bars",not getattr(M,"bars"))
                     
                 else:
                     current = chr(event.key) if chr(event.key) in "abcdefghijklmnopqrstuvwxyz1234567890" else current
@@ -128,7 +139,7 @@ def main():
 
         # Drawing
         screen.fill((0,0,0))
-        
+
         pygame.draw.rect(screen,(140,140,140),(s[0]/2-100,s[1]/2-100,200,200),10)
         pygame.draw.rect(screen,(100,100,100),(s[0]/2-90,s[1]/2-90,180,180),0)
 

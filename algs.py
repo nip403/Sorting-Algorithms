@@ -27,6 +27,7 @@ from Pancake import Pancake
 from Permutation import Permutation
 from Strand import Strand
 from Bucket import Bucket
+from MinMax import MinMax
 
 class methods:
     def __init__(self,fps,length,clockObject,surface,font,bars):
@@ -68,3 +69,4 @@ class methods:
     permutation = lambda self: Permutation(self.array,self.display,self.clock,self.fps).main()
     strand = lambda self: Strand(self.array,self.display,self.clock,self.fps).main()
     bucket = lambda self: Bucket(self.array,self.display,self.clock,self.fps).main()
+    minmax = lambda self: MinMax(self.array,self.display,self.clock,self.fps).main()

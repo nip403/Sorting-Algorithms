@@ -18,7 +18,7 @@ class Bubble:
         while True:
             self.clock.tick(self.fps)
             
-            if pos == lim:
+            if pos >= lim:
                 pos = 0
                 lim -= 1
                 

@@ -38,62 +38,39 @@ def main():
 
     # Initialisations
     M = methods(fps,clock,screen,smallfont,draw_bars,s)
+
+    all_sorts = {
+        "b":["Bubble",M.bubble],
+        "q":["Quick",M.quicksort],
+        "s":["Selection",M.selection],
+        "c":["Cocktail Shaker",M.cocktail],
+        "j":["Bogo",M.bogo],
+        "o":["Odd-Even",M.oddeven],
+        "k":["Shell",M.shell],
+        "l":["Comb",M.comb],
+        "i":["Insertion",M.insertion],
+        "m":["Merge (TopDown)",M.mergetd],
+        "r":["Radix (LSD)",M.radixlsd],
+        "x":["Counting",M.counting],
+        "y":["Cycle",M.cycle],
+        "h":["Heap",M.heap],
+        "w":["Circle",M.circle],
+        "g":["Gnome",M.gnome],
+        "u":["Binary Insertion",M.binaryinsertion],
+        "p":["Pancake",M.pancake],
+        "d":["Permutation",M.permutation],
+        "n":["Strand",M.strand],
+        "v":["Bucket",M.bucket],
+        "e":["MinMax",M.minmax],
+        "t":["Merge (BottomUp)",M.mergebu]
+    }
     
     head1 = medfont.render("Enter Sorting Type:",True,(140,140,255))
     head2 = medfont.render("Types:",True,(255,255,140))
     head3 = medfont.render("Array:",True,(255,255,255))
 
     show = Show_array(arr_length,(300,200),draw_bars)
-    typelist = [[labels.render(i,True,(255,145,140)),[120,130+(p*23)]] for p,i in enumerate([
-        "Bubble Sort: 'b'",
-        "Quick Sort: 'q'",
-        "Selection Sort: 's'",
-        "Cocktail Shaker Sort: 'c'",
-        "Bogo Sort: 'j'",
-        "Odd-Even Sort: 'o'",
-        "Shell Sort: 'k'",
-        "Comb Sort: 'l'",
-        "Insertion Sort: 'i'",
-        "Merge (TD) Sort: 'm'",
-        "Radix (LSD) Sort: 'r'",
-        "Counting Sort: 'x'",
-        "Cycle Sort: 'y'",
-        "Heap Sort: 'h'",
-        "Circle Sort: 'w'",
-        "Gnome Sort: 'g'",
-        "Binary Insertion Sort: 'u'",
-        "Pancake Sort: 'p'",
-        "Permutation Sort: 'd'",
-        "Strand Sort: 'n'",
-        "Bucket Sort: 'v'",
-        "MinMax Sort: 'e'",
-        "Merge (Bottom Up) Sort: 't'"
-    ])]
-
-    keys = {"q":M.quicksort,
-            "b":M.bubble,
-            "s":M.selection,
-            "c":M.cocktail,
-            "j":M.bogo,
-            "o":M.oddeven,
-            "k":M.shell,
-            "l":M.comb,
-            "i":M.insertion,
-            "m":M.mergetd,
-            "r":M.radixlsd,
-            "x":M.counting,
-            "y":M.cycle,
-            "h":M.heap,
-            "w":M.circle,
-            "g":M.gnome,
-            "u":M.binaryinsertion,
-            "p":M.pancake,
-            "d":M.permutation,
-            "n":M.strand,
-            "v":M.bucket,
-            "e":M.minmax,
-            "t":M.mergebu
-    }
+    typelist = [[labels.render(f"{all_sorts[i][0]} Sort: '{i}'",True,(255,145,140)),[120,130+(p*23)]] for p,i in enumerate(all_sorts.keys())]
 
     current = "b"
 
@@ -109,11 +86,14 @@ def main():
                 
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:                    
-                    for name,func in keys.items():
+                    for name,data in all_sorts.items():
                         if current == name:
+                            pygame.display.set_caption(f"Sorting Algorithms by NIP |||| List size: {arr_length} |||| Sorting method: {data[0]} Sort")
                             M.setup(arr_length)
-                            func()
+                            
+                            data[1]()
                             pygame.time.wait(500)
+                            pygame.display.set_caption("Sorting Algorithms by NIP")
 
                 elif event.key == pygame.K_BACKSPACE:
                     draw_bars = not draw_bars
@@ -124,10 +104,6 @@ def main():
                     current = chr(event.key) if chr(event.key) in "abcdefghijklmnopqrstuvwxyz1234567890" else current
                     
         # User changes array length
-        # UP: +10
-        # DOWN: -10
-        # RIGHT: +1
-        # LEFT: -1
         if pygame.key.get_pressed()[pygame.K_UP] or pygame.key.get_pressed()[pygame.K_DOWN] or pygame.key.get_pressed()[pygame.K_RIGHT] or pygame.key.get_pressed()[pygame.K_LEFT]:
 
             # Change array length

@@ -34,7 +34,7 @@ def main():
     head3 = medfont.render("Array:",True,(255,255,255))
 
     show = Show_array(arr_length,(300,200))
-    typelist = [[labels.render(i,True,(255,145,140)),[120,160+(p*20)]] for p,i in enumerate([
+    typelist = [[labels.render(i,True,(255,145,140)),[120,130+(p*23)]] for p,i in enumerate([
         "Bubble Sort: 'b'",
         "Quick Sort: 'q'",
         "Selection Sort: 's'",
@@ -129,8 +129,8 @@ def main():
         # Drawing
         screen.fill((0,0,0))
 
-        screen.blit(head1,(50,50))
-        screen.blit(head2,(50,120))
+        screen.blit(head1,(40,40))
+        screen.blit(head2,(60,90))
         screen.blit(head3,(750,140))
 
         show.draw(screen,[640,200],[740,440],labels)

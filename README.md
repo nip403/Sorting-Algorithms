@@ -101,6 +101,10 @@ If you are running any version before 3.6, you will need to rewrite both f-strin
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n^2/2)`
     - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2/2)`
     - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2/2)`
+- Merge Sort (BottomUp, out of place)
+    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
+    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n log n)`
+    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n log n)`
 
 # Problems
 - Fix flickering in Cycle Sort's green bars
@@ -111,7 +115,6 @@ If you are running any version before 3.6, you will need to rewrite both f-strin
 - Validate all of Minmax Sort's time complexities (it was calculated based on the fact that it is a 2 way insertion sort)
 
 # To-do List
-- Merge Sort (BottomUp)
 - Bitonic Sort
 - Radix Sort (MSD)
 - Quicksort (2 pivots)

@@ -10,12 +10,22 @@ class Pancake:
         self.comparisons = 0
 
     def main(self):
+        self.accesses += 1
+        
         for pan in range(len(self.array),1,-1):
             self.clock.tick(self.fps)
-            big = max(range(pan),key=self.array.__getitem__)
 
+            self.accesses += 1
+            self.comparisons += 1
+            big = max(range(pan),key=self.array.__getitem__)
+            
             if not big + 1 == pan:
+                self.accesses += 2
+                self.comparions += 1
+        
                 if not big == 0:
+
+                    self.accesses += 2
                     self.array[:big+1] = self.array[:big+1][::-1]
                 self.array[:pan] = self.array[:pan][::-1]
 

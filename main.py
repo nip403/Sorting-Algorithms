@@ -56,7 +56,8 @@ def main():
         "Permutation Sort: 'd'",
         "Strand Sort: 'n'",
         "Bucket Sort: 'v'",
-        "MinMax Sort: 'e'"
+        "MinMax Sort: 'e'",
+        "Merge (Bottom Up) Sort: 't'"
     ])]
 
     keys = {"q":M.quicksort,
@@ -80,7 +81,9 @@ def main():
             "d":M.permutation,
             "n":M.strand,
             "v":M.bucket,
-            "e":M.minmax}
+            "e":M.minmax,
+            "t":M.mergebu
+    }
   
     current = ""
 

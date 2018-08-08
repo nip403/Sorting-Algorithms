@@ -143,6 +143,9 @@ def main():
         pygame.draw.rect(screen,(140,140,140),(s[0]/2-100,s[1]/2-100,200,200),10)
         pygame.draw.rect(screen,(100,100,100),(s[0]/2-90,s[1]/2-90,180,180),0)
 
+        for i in [[100,100],[-100,-100],[100,-100],[-100,100]]:
+            pygame.draw.circle(screen,(140,140,140),list(map(int,(s[0]/2+i[0],s[1]/2+i[1]))),4,0)
+
         screen.blit(head1,(40,40))
         screen.blit(head2,(60,90))
         screen.blit(head3,(750,140))

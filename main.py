@@ -106,7 +106,7 @@ def main():
                             pygame.time.wait(500)
                     
                 else:
-                    current = chr(event.key)
+                    current = chr(event.key) if chr(event.key) in "abcdefghijklmnopqrstuvwxyz1234567890" else current
 
         # User changes array length
         # UP: +10
@@ -128,6 +128,9 @@ def main():
 
         # Drawing
         screen.fill((0,0,0))
+        
+        pygame.draw.rect(screen,(140,140,140),(s[0]/2-100,s[1]/2-100,200,200),10)
+        pygame.draw.rect(screen,(100,100,100),(s[0]/2-90,s[1]/2-90,180,180),0)
 
         screen.blit(head1,(40,40))
         screen.blit(head2,(60,90))

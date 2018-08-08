@@ -12,10 +12,8 @@ class RadixLSD:
         buckets = [[] for i in range(base)]
 
         for number in array:
-            digit = (number // (base**iteration)) % base
-
             self.accesses += 1
-            buckets[digit].append(number)
+            buckets[(number // (base**iteration)) % base].append(number)
 
         return buckets
 

@@ -1,28 +1,3 @@
-def merge(a,b=None):
-    if b is None:
-        return a
-
-    new = []
-    total = a+b
-
-    while len(total):
-        small = min(total)
-        new.append(small)
-        del total[total.index(small)]
-
-    return new
-
-def msort(groups):
-    if len(groups) == 1:
-        return groups
-    
-    new = []
-
-    for i in range(0,len(groups),2):
-        new.append(merge(groups[i],groups[i+1] if i+1 < len(groups) else None))
-
-    return msort(new)
-
 import pygame
 
 class MergeBU:

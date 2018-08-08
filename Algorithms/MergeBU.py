@@ -26,6 +26,8 @@ class MergeBU:
         total = a+b
 
         while len(total):
+            self.accesses += 4
+            self.comparisons += 1
             self.clock.tick(self.fps)
             
             smallest = min(total)
@@ -37,13 +39,17 @@ class MergeBU:
             if self.tmp3 == 2:
                 self.display.add_green(range(len(out)))
             
-            self.display.draw(self.tmp+out+total+self.tmp2,len(self.tmp+out))
+            self.display.draw(self.tmp+out+total+self.tmp2,len(self.tmp+out),len(self.tmp+out+total),len(self.tmp))
+            self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()
 
         return out
 
     def sort(self,groups):
+        self.accesses += 1
+        self.comparisons += 1
+        
         if len(groups) == 1:
             return groups
         
@@ -52,12 +58,15 @@ class MergeBU:
         self.display.draw(self.get_drawable(groups))
         pygame.display.flip()
 
+        self.accesses += 1
         for i in range(0,len(groups),2):
             self.clock.tick(self.fps)
             self.tmp = self.get_drawable(out)
             self.tmp2 = self.get_drawable(groups[i+2:])
             self.tmp3 = len(groups)
-            
+
+            self.accesses += 2
+            self.comparisons += 1
             out.append(self.merge(groups[i],groups[i+1] if i+1 < len(groups) else None))
 
         self.display.draw(self.get_drawable(out))
@@ -66,5 +75,6 @@ class MergeBU:
         return self.sort(out)
 
     def main(self):
+        self.accesses += 2
+        self.comparisons == 1
         self.sort([[self.array[i],self.array[i+1]] if i < len(self.array) else [self.array[i]] for i in range(0,len(self.array),2)])
-

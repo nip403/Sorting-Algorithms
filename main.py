@@ -24,12 +24,15 @@ smallfont = pygame.font.SysFont("Garamond MS",20)
 labels = pygame.font.SysFont("comicsansms",20)
 
 # User Instructions
-print("To select the sorting mode, press the letters under \"Types\".")
-print("To run, press ENTER.")
-print("To toggle between drawing bars and dots, press BACKSPACE.")
-print("\nTo change the list size, use either:")
+print("\n |----                                                    ----| \n")
+print("  To select the sorting mode, press the letters under \"Types\".")
+print("  To run, press ENTER.")
+print("  To toggle between drawing bars and dots, press BACKSPACE.")
+print("\n  To change the list size, use either:")
 print("\tUP and DOWN arrows (these change the size by 10).")
 print("\tLEFT and RIGHT arrows (these change the size by 1).")
+print("\n |----                                                    ----| \n")
+
 
 def main():
     global arr_length

@@ -4,7 +4,7 @@ import pygame
 import sys
 
 # Options
-arr_length = 100
+arr_length = 200
 fps = 0
 draw_bars = True
 
@@ -33,9 +33,8 @@ print("\tUP and DOWN arrows (these change the size by 10).")
 print("\tLEFT and RIGHT arrows (these change the size by 1).")
 print("\n |----                                                    ----| \n")
 
-
 def main():
-    global arr_length
+    global arr_length,draw_bars
 
     # Initialisations
     M = methods(fps,clock,screen,smallfont,draw_bars,s)
@@ -44,7 +43,7 @@ def main():
     head2 = medfont.render("Types:",True,(255,255,140))
     head3 = medfont.render("Array:",True,(255,255,255))
 
-    show = Show_array(arr_length,(300,200))
+    show = Show_array(arr_length,(300,200),draw_bars)
     typelist = [[labels.render(i,True,(255,145,140)),[120,130+(p*23)]] for p,i in enumerate([
         "Bubble Sort: 'b'",
         "Quick Sort: 'q'",
@@ -117,11 +116,13 @@ def main():
                             pygame.time.wait(500)
 
                 elif event.key == pygame.K_BACKSPACE:
+                    draw_bars = not draw_bars
                     setattr(M,"bars",not getattr(M,"bars"))
+                    setattr(show,"bars",not getattr(show,"bars"))
                     
                 else:
                     current = chr(event.key) if chr(event.key) in "abcdefghijklmnopqrstuvwxyz1234567890" else current
-
+                    
         # User changes array length
         # UP: +10
         # DOWN: -10
@@ -133,12 +134,12 @@ def main():
             events = pygame.key.get_pressed()
             arr_length += (10 if events[pygame.K_UP] else (1 if events[pygame.K_RIGHT] else (-10 if events[pygame.K_DOWN] else (-1 if events[pygame.K_LEFT] else 0))))
 
-            if arr_length < 2:
-                arr_length = 2
+            if arr_length < 4:
+                arr_length = 4
 
             # Re-initialise
             M.setup(arr_length)
-            show = Show_array(arr_length,(300,200))
+            show = Show_array(arr_length,(300,200),draw_bars)
 
         # Drawing
         screen.fill((0,0,0))

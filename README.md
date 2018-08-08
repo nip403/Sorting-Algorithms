@@ -8,7 +8,7 @@ Download project and run main.py to use.\
 Python 3.6 and Pygame 1.7.x or above is required.\
 You can download pygame either [here](https://www.pygame.org/download.shtml) or [here](https://bitbucket.org/pygame/pygame/downloads/).
 
-If you are running any version before 3.6, you will need to rewrite both f-strings in "display.py" using either of the following:
+If you are running any version before 3.6, you will need to rewrite both f-strings in "display.py" and "showarr.py" using either of the following:
 - % operator
 - format() method
 

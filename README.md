@@ -29,98 +29,32 @@ If you are running any version before 3.6, you will need to rewrite all f-string
 - format() method
 
 # Efficiencies
-- Quicksort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n log n)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
-- Bubble Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
-- Selection Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n^2)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
-- Cocktail Shaker Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
-- Bogo Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O((n+1)!)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(Infinity)`
-- Odd-Even Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
-- Shell Sort (Using original gap sequence)
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^1.5)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
-- Comb Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2 / 2^p), p = amount of increments`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
-- Insertion Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
-- Merge Sort (TopDown, out of place)
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n log n)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n log n)`
-- Radix Sort (LSD, base 256)
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(nk)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(nk)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(nk)`
-- Counting Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n+k)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n+k)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n+k)`
-- Cycle Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n^2)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
-- Heap Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n log n)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n log n)`
-- Circle Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n log n log n)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n log n log n)`
-- Gnome Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
-- Binary Insertion Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n log n)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n log n)`
-- Pancake Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n log n)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n log n)`
-- Permutation Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n * n!)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n * n!)`
-- Strand Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
-- Bucket Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n+k)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n+k)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
-- Minmax Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(t=0,n//2 ∑ (n-2t)), (sum of n-2t from t=0 to t=n//2)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(t=0,n//2 ∑ (n-2t))`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(t=0,n//2 ∑ (ln-2t))`
-- Merge Sort (BottomUp, out of place)
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n log n)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n log n)`
+
+|Name|![](https://placehold.it/15/00ff00/000000?text=+) Best Case|![](https://placehold.it/15/ffff00/000000?text=+) Average Case|![](https://placehold.it/15/ff0000/000000?text=+) Worst Case|
+|-|-|-|-|
+|Quicksort|O(n log n)|O(n log n)|O(n^2)|
+|Bubble sort|O(n)|O(n^2)|O(n^2)|
+|Selection sort|O(n^2)|O(n^2)|O(n^2)|
+|Cocktail Shaker sort|O(n)|O(n^2)|O(n^2)|
+|Bogo sort|O(n)|O((n+1)!)|O(Infinity)|
+|Odd-Even sort|O(n)|O(n^2)|O(n^2)|
+|Shell sort (original gap sequence)|O(n log n)|O(n^2)|O(n^2)|
+|Comb sort|O(n log n)|O(n^2 / 2^p), p = amount of increments|O(n^2)|
+|Insertion sort|O(n)|O(n^2)|O(n^2)|
+|Merge sort (TopDown, out of place)|O(n log n)|O(n log n)|O(n log n)|
+|Radix sort (LSD, base 256), w = word size|O(wn)|O(wn)|O(wn)|
+|Counting sort, k = range of inputs|O(n+k)|O(n+k)|O(n+k)|
+|Cycle sort|O(n^2)|O(n^2)|O(n^2)|
+|Heap sort|O(n log n)|O(n log n)|O(n log n)|
+|Circle sort|O(n log n)|O(n log n log n)|O(n log n log n)|
+|Gnome sort|O(n)|O(n^2)|O(n^2)|
+|Binary Insertion sort|O(n)|O(n log n)|O(n log n)|
+|Pancake sort|O(n log n)|O(n log n)|O(n log n)|
+|Permutation sort|O(n)|O(n * n!)|O(n * n!)|
+|Strand sort|O(n)|O(n^2)|O(n^2)|
+|Bucket sort, k = range of inputs|O(n+k)|O(n+k)|O(n^2)|
+|MinMax sort|O(t=0,n//2 ∑ (n-2t)), (sum of n-2t from t=0 to t=n//2))|O(t=0,n//2 ∑ (n-2t))|O(t=0,n//2 ∑ (n-2t))|
+|Merge sort (BottomUp, out of place)|O(n log n)|O(n log n)|O(n log n)|
 
 # Problems
 - Validate Circle sort's average case time complexity

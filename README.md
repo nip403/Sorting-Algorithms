@@ -53,7 +53,7 @@ If you are running any version before 3.6, you will need to rewrite all f-string
 |Permutation sort|O(n)|O(n * n!)|O(n * n!)|
 |Strand sort|O(n)|O(n^2)|O(n^2)|
 |Bucket sort, k = range of inputs|O(n+k)|O(n+k)|O(n^2)|
-|MinMax sort|O(t=0,n//2 ∑ (n-2t)), (sum of n-2t from t=0 to t=n//2))|O(t=0,n//2 ∑ (n-2t))|O(t=0,n//2 ∑ (n-2t))|
+|MinMax sort, (sum of n-2t from t=0 to t=n//2)|O(t=0,n//2 ∑ (n-2t))|O(t=0,n//2 ∑ (n-2t))|O(t=0,n//2 ∑ (n-2t))|
 |Merge sort (BottomUp, out of place)|O(n log n)|O(n log n)|O(n log n)|
 
 # Problems

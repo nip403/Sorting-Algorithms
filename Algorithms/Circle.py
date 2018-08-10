@@ -20,9 +20,9 @@ class Circle:
 
         for i in range(m):
             self.clock.tick(self.fps)
-            
-            self.comparisons += 1
+
             self.accesses += 2
+            self.comparisons += 1
             
             if self.array[right-(i+1)] < self.array[left+i]:
                 self.array[right-(i+1)],self.array[left+i] = self.array[left+i],self.array[right-(i+1)]
@@ -35,15 +35,14 @@ class Circle:
 
             pygame.display.flip()
 
-        self.comparisons += 1
         self.accesses += 2
+        self.comparisons += 2
         
         if n & 1 and self.array[left+m] < self.array[left+m-1]:
             self.array[left+m-1],self.array[left+m] = self.array[left+m],self.array[left+m-1]
             swaps += 1
             self.accesses += 4
 
-        self.display.events()
         self.display.add_green([p for p,i in enumerate(self.array) if sorted(self.array)[p] == i])
         self.display.draw(self.array,left,right,left+m,left+m-1)
         self.display.draw_other(self.accesses,self.comparisons)

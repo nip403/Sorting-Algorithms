@@ -38,18 +38,11 @@ class Strand:
         return s
 
     def make_output(self,correct,remaining):
-        self.pos = [p for p,i in enumerate(remaining) if i in correct]
-        return correct + [i for p,i in enumerate(remaining) if not p in self.pos]
+        return correct + [i for p,i in enumerate(remaining) if not p in correct]
 
     def main(self):
         array = self.array[:]
         out = self.strand(array)
-
-        self.display.events()
-        self.display.draw(self.array,*range(len(self.array)))
-        self.display.draw_other(self.accesses,self.comparisons)
-
-        pygame.display.flip()
 
         while len(array):
             self.accesses += 1
@@ -60,8 +53,8 @@ class Strand:
             final_output = self.make_output(out,self.array)
 
             self.display.events()
-            self.display.add_green(self.pos)
-            self.display.draw(final_output,*[p for p,i in enumerate(self.array) if not p in self.pos])
+            self.display.add_green(range(len(out)))
+            self.display.draw(final_output,*range(len(self.array),len(out),-1))
             self.display.draw_other(self.accesses,self.comparisons)
             
             pygame.display.flip()

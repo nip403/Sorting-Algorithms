@@ -14,37 +14,32 @@ class Display:
 
         self.green = []
 
-    def add_green(self,arr):
-        self.green = arr
+    def add_green(self,arr,replace=True):
+        if replace:
+            self.green = arr
+        else:
+            self.green += arr
 
     def draw(self,array,*highlighted,background=(0,0,0)):
         self.surface.fill(background)
 
         for index,item in enumerate(array):
-            draw = False
-            
             if self.bars:
                 
-                # If bar is green: draw green bar
-                # If bar is red (regardless of green): draw red bar
-                # Else: draw white bar
-                
-                if index in self.green:
-                    pygame.draw.rect(self.surface,self.done_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
-                    draw = True
-        
                 if index in highlighted:
                     pygame.draw.rect(self.surface,self.sorting_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
-                elif not draw:
+                elif index in self.green:
+                    pygame.draw.rect(self.surface,self.done_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
+                else:
                     pygame.draw.rect(self.surface,self.base_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
-            else:
-                if index in self.green:
-                    pygame.draw.circle(self.surface,self.done_colour if not index in highlighted else self.sorting_colour,list(map(int,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1])))),1,0)
-                    draw = True
 
+            else:
+                
                 if index in highlighted:
                     pygame.draw.circle(self.surface,self.sorting_colour if not index in highlighted else self.sorting_colour,list(map(int,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1])))),1,0)
-                elif not draw:
+                elif index in self.green:
+                    pygame.draw.circle(self.surface,self.done_colour if not index in highlighted else self.sorting_colour,list(map(int,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1])))),1,0)
+                else:
                     pygame.draw.circle(self.surface,self.base_colour if not index in highlighted else self.sorting_colour,list(map(int,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1])))),1,0)
                    
     def draw_other(self,accesses,comparisons):

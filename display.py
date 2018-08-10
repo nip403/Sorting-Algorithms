@@ -18,7 +18,7 @@ class Display:
         if replace:
             self.green = arr
         else:
-            self.green += arr
+            self.green = list(set(self.green+arr))
 
     def draw(self,array,*highlighted,background=(0,0,0)):
         self.surface.fill(background)

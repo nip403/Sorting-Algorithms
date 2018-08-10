@@ -2,22 +2,6 @@
 A visual representation of sorting algorithms in Python 3.x using the Pygame library.\
 To run, open main.py.
 
-Some of the fastest algorithms are (including graphically):
-- Quicksort
-- Mergesort
-- Heapsort
-- Radix sort
-- Shellsort
-- Binary Insertion sort
-- Strand sort
-
-Some of the slowest algorithms are:
-- Bubble sort
-- Insertion sort
-- Selection sort
-- Bogo sort
-- Permutation sort
-
 # Requirements
 I am using the [Python 3.7](https://www.python.org/downloads/release/python-370/) IDLE.\
 Download project and run main.py to use.\

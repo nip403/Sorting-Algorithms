@@ -20,6 +20,7 @@ class Quicksort:
             if array[j] <= pivot:
                 i += 1
                 array[i],array[j] = array[j],array[i]
+                
             self.accesses += 5
             self.comparisons += 1
 
@@ -45,7 +46,7 @@ class Quicksort:
         self.accesses += 1
         self.qs(self.array,0,len(self.array)-1)
 
-        self.display.add_green([p for p,i in enumerate(self.array) if sorted(self.array)[p] == i])
+        self.display.add_green(range(len(self.array)))
         self.display.draw(self.array)
         self.display.draw_other(self.accesses,self.comparisons)
 

@@ -11,6 +11,8 @@ class Counting:
 
     def main(self):
         count = [0] * len(self.array)
+        output = [0] * len(self.array)
+        self.accesses += 5
        
         for i in range(0,len(self.array)):
             count[self.array[i]] += 1
@@ -20,18 +22,15 @@ class Counting:
             count[i] += count[i - 1]
             self.accesses += 2
 
-        output = [0] * len(self.array)
-        self.accesses += 5
-
         for i in range(len(self.array)):
             self.clock.tick(self.fps)
             
             output[count[self.array[i]] - 1] = self.array[i]
             count[self.array[i]] -= 1
-            self.accesses += 6 + len(self.array)
+            self.accesses += 6
 
             self.display.events()
-            self.display.add_green([p for p,i in enumerate(output) if i == sorted(self.array)[p]])
+            self.display.add_green([count[self.array[i]]],False)
             self.display.draw([output[i] if (output[i] or i == 0) else self.array[i] for i in range(len(self.array))],self.array[i],count[self.array[i]])
             self.display.draw_other(self.accesses,self.comparisons)
 

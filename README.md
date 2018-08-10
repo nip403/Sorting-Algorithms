@@ -88,7 +88,7 @@ If you are running any version before 3.6, you will need to rewrite all f-string
 - Permutation Sort
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
     - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n * n!)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(Infinity)`
+    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n * n!)`
 - Strand Sort
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
     - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2)`

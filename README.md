@@ -43,7 +43,7 @@ If you are running any version before 3.6, you will need to rewrite all f-string
     - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n log2 n)`
 - Comb Sort
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2 / 2^p) where p is num of increments`
+    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2 / 2^p), p = amount of increments`
     - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
 - Insertion Sort
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
@@ -98,9 +98,9 @@ If you are running any version before 3.6, you will need to rewrite all f-string
     - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n+k)`
     - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
 - Minmax Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(t=0,length//2 ∑ (length-2t))`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(t=0,length//2 ∑ (length-2t))`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(t=0,length//2 ∑ (length-2t))`
+    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(t=0,length//2 ∑ (length-2t)), (sum of n-2t from t=0 to t=n//2)`
+    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(t=0,length//2 ∑ (length-2t)), (sum of n-2t from t=0 to t=n//2)`
+    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(t=0,length//2 ∑ (length-2t)), (sum of n-2t from t=0 to t=n//2)`
 - Merge Sort (BottomUp, out of place)
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
     - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n log n)`

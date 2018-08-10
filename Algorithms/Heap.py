@@ -41,7 +41,7 @@ class Heap:
             pygame.display.flip()
 
     def main(self):
-        self.accesses += 1
+        self.accesses += 2
         
         for start in range(int((len(self.array)-2)/2),-1,-1):
             self.clock.tick(self.fps)
@@ -55,8 +55,6 @@ class Heap:
             
             pygame.display.flip()
 
-        self.accesses += 1
-        
         for end in range(len(self.array)-1,0,-1):
             self.clock.tick(self.fps)
             

@@ -29,6 +29,7 @@ class Comb:
                 if self.array[i] > self.array[int(i+gap)]:
                     self.array[i],self.array[int(i+gap)] = self.array[int(i+gap)],self.array[i]
                     done = False
+                    
                 self.accesses += 6
                 self.comparisons += 1
 

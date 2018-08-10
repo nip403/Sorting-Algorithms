@@ -108,7 +108,6 @@ If you are running any version before 3.6, you will need to rewrite both f-strin
 
 # Problems
 - Fix flickering in Cycle Sort's green bars
-- Fix loading Radix LSD Sort's green bars
 - Fix positioning in drawing Bucket Sort's insertion sort for each bucket
 - Validate Circle sort's average case time complexity
 - Validate Shell sort's average and worst case time complexity

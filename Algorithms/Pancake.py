@@ -24,13 +24,13 @@ class Pancake:
                 self.comparisons += 1
         
                 if not big == 0:
-
                     self.accesses += 2
-                    self.array[:big+1] = self.array[:big+1][::-1]
-                self.array[:pan] = self.array[:pan][::-1]
+                    self.array[:big+1] = reversed(self.array[:big+1])
+                    
+                self.array[:pan] = reversed(self.array[:pan])
 
             self.display.events()
-            self.display.add_green([self.array.index(i) for i in self.array[pan:]])
+            self.display.add_green([self.array.index(pan-1)],False)
             self.display.draw(self.array,*range(pan))
             self.display.draw_other(self.accesses,self.comparisons)
 

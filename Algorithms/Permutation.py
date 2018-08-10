@@ -11,7 +11,7 @@ class Permutation:
         self.comparisons = 0
 
     def ordered(self,arr):
-        return True if all(x <= arr[i+1] for i,x in enumerate(arr[:-1])) else False
+        return all(x <= arr[i+1] for i,x in enumerate(arr[:-1]))
 
     def main(self):
         self.accesses += 1

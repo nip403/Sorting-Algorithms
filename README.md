@@ -37,10 +37,10 @@ If you are running any version before 3.6, you will need to rewrite all f-string
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n)`
     - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2)`
     - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
-- Shellsort
+- Shell Sort (Using original gap sequence)
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n log2 n)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n log2 n)`
+    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^1.5)`
+    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
 - Comb Sort
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
     - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2 / 2^p), p = amount of increments`
@@ -108,7 +108,7 @@ If you are running any version before 3.6, you will need to rewrite all f-string
 
 # Problems
 - Validate Circle sort's average case time complexity
-- Validate Shell sort's average and worst case time complexity
+- Validate Shell sort's average case time complexity
 
 # To-do List
 - Bitonic Sort

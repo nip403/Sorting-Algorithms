@@ -36,7 +36,7 @@ class Bubble:
             self.comparisons += 1
               
             self.display.events()
-            self.display.add_green([self.array.index(i) for i in self.array[lim+1:]])
+            self.display.add_green([lim+1],False)
             self.display.draw(self.array,pos,lim+1)
             self.display.draw_other(self.accesses,self.comparisons)
 

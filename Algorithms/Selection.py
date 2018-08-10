@@ -11,22 +11,22 @@ class Selection:
 
     def main(self):
         self.accesses += 1
+        
         for i in range(0,len(self.array)-1):
             min_pos = i
-            self.accesses += 1
+            self.accesses += 2
 
-            self.accesses += 1
             for j in range(i+1,len(self.array)):
                 self.clock.tick(self.fps)
                 self.accesses += 1
 
                 if self.array[min_pos] > self.array[j]:
                     min_pos = j
+                    
                 self.comparisons += 1
                 self.accesses += 2
 
                 self.display.events()
-                self.display.add_green([self.array.index(i) for i in self.array[:i]])
                 self.display.draw(self.array,j,min_pos,i)
                 self.display.draw_other(self.accesses,self.comparisons)
 
@@ -34,10 +34,10 @@ class Selection:
 
             self.array[i],self.array[min_pos] = self.array[min_pos],self.array[i]
             self.accesses += 4
+            self.display.add_green([i],False)
 
-            self.display.events()
-            self.display.add_green([self.array.index(i) for i in self.array[:i]])
-            self.display.draw(self.array,j,min_pos,i)
-            self.display.draw_other(self.accesses,self.comparisons)
+        self.display.add_green(range(len(self.array)))
+        self.display.draw(self.array,j,min_pos,i)
+        self.display.draw_other(self.accesses,self.comparisons)
 
-            pygame.display.flip()
+        pygame.display.flip()

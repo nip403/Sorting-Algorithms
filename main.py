@@ -25,6 +25,8 @@ labels = pygame.font.SysFont("comicsansms",20)
 
 # User Instructions
 print("\n |----                                                    ----| \n")
+print("  To download the code: go to:")
+print("\thttps://github.com/nip403/Sorting-Algorithms\n")
 print("  To select the sorting mode, press the letters under \"Types\".")
 print("  To run, press ENTER.")
 print("  To toggle between drawing bars and dots, press BACKSPACE.")

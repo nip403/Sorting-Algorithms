@@ -22,6 +22,7 @@ class Oddeven:
                     if self.array[i] > self.array[i+1]:
                         self.array[i],self.array[i+1] = self.array[i+1],self.array[i]
                         done = False
+                        
                     self.accesses += 6
                     self.comparisons += 1
 

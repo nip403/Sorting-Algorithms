@@ -39,11 +39,11 @@ If you are running any version before 3.6, you will need to rewrite all f-string
 |Bogo sort|O(n)|O((n+1)!)|O(Infinity)|
 |Odd-Even sort|O(n)|O(n^2)|O(n^2)|
 |Shell sort (original gap sequence)|O(n log n)|O(n^2)|O(n^2)|
-|Comb sort|O(n log n)|O(n^2 / 2^p), p = amount of increments|O(n^2)|
+|Comb sort|O(n log n)|O(n^2 / 2^p)|O(n^2)|
 |Insertion sort|O(n)|O(n^2)|O(n^2)|
 |Merge sort (TopDown, out of place)|O(n log n)|O(n log n)|O(n log n)|
-|Radix sort (LSD, base 256), w = word size|O(wn)|O(wn)|O(wn)|
-|Counting sort, k = range of inputs|O(n+k)|O(n+k)|O(n+k)|
+|Radix sort (LSD, base 256)|O(wn)|O(wn)|O(wn)|
+|Counting sort|O(n+k)|O(n+k)|O(n+k)|
 |Cycle sort|O(n^2)|O(n^2)|O(n^2)|
 |Heap sort|O(n log n)|O(n log n)|O(n log n)|
 |Circle sort|O(n log n)|O(n log n log n)|O(n log n log n)|
@@ -52,9 +52,15 @@ If you are running any version before 3.6, you will need to rewrite all f-string
 |Pancake sort|O(n log n)|O(n log n)|O(n log n)|
 |Permutation sort|O(n)|O(n * n!)|O(n * n!)|
 |Strand sort|O(n)|O(n^2)|O(n^2)|
-|Bucket sort, k = range of inputs|O(n+k)|O(n+k)|O(n^2)|
-|MinMax sort, (sum of n-2t from t=0 to t=n//2)|O(t=0,n//2 ∑ (n-2t))|O(t=0,n//2 ∑ (n-2t))|O(t=0,n//2 ∑ (n-2t))|
+|Bucket sort|O(n+k)|O(n+k)|O(n^2)|
+|MinMax sort|O(t=0,n//2 ∑ (n-2t))|O(t=0,n//2 ∑ (n-2t))|O(t=0,n//2 ∑ (n-2t))|
 |Merge sort (BottomUp, out of place)|O(n log n)|O(n log n)|O(n log n)|
+
+ADDITIONAL INFO:
+- Comb Sort: p = amount of increments
+- Radix Sort: w = word size
+- Counting and Bucket Sort: k = range of inputs
+- MinMax sort: sum of n-2t from t=0 to t=n//2
 
 # Problems
 - Validate Circle sort's average case time complexity

@@ -32,7 +32,7 @@ class RadixLSD:
                 numbers.append(number)
 
                 self.display.events()
-                self.display.add_green([p for p,i in enumerate(self.array) if sorted(self.array)[p] == i])
+                self.display.add_green([p for p,i in enumerate(numbers) if sorted(numbers)[p] == i])
                 self.display.draw(self.array,count)
                 self.display.draw_other(self.accesses,0)
                 

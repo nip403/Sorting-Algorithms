@@ -10,7 +10,7 @@ class Bucket:
         self.accesses = 0
         self.comparisons = 0
 
-    def insertion(self,array,p,c):
+    def insertion(self,array,clength):
         self.accesses += 1
         
         for i in range(1,len(array)):
@@ -28,20 +28,14 @@ class Bucket:
                 j -= 1
 
                 self.display.events()
-                self.display.draw(self.array[:p*c+p+1] + array + self.array[p*c+p+1+len(array):],p*c+p,p*c+p+len(array),p*c+p+j,p*c+p+i)
+                self.display.add_green([p+clength for p,i in enumerate(array) if sorted(array)[p] == i],False)
+                self.display.draw(self.array[:clength] + array + self.array[clength+len(array):],clength,clength+j,clength+i)
                 self.display.draw_other(self.accesses,self.comparisons)
 
                 pygame.display.flip()
     
             array[j+1] = key
             self.accesses += 1
-
-            self.display.events()
-            self.display.add_green([p for p,i in enumerate(self.array) if i == sorted(self.array)[p]])
-            self.display.draw(self.array[:p*c+p+1] + array + self.array[p*c+p+1+len(array):],p*c+p,p*c+p+len(array),p*c+p+j,p*c+p+i)
-            self.display.draw_other(self.accesses,self.comparisons)
-
-            pygame.display.flip()
 
         return array
 
@@ -78,36 +72,33 @@ class Bucket:
         return array
 
     def main(self):
+        self.accesses += 3
         c = self.hash(self.array)
-        self.accesses += 1
         buckets = [[] for _ in range(c[1])]
 
         for p0,i in enumerate(self.array):
             self.clock.tick(self.fps)
             
-            x = self.re_hash(i,c)
-            buckets[x].append(i)
+            buckets[self.re_hash(i,c)].append(i)
             self.accesses += 1
-
             tmp = self.merge_buckets(buckets,self.array,True)
+            
             self.display.events()
-            self.display.add_green([p for p,i in enumerate(tmp) if i == sorted(tmp)[p]])
             self.display.draw(tmp+self.array[len(tmp):],p0)
             self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()
 
+        cumulative_length = 0 # Uneven bucket size
         for p,bucket in enumerate(buckets):
             self.clock.tick(self.fps)
-            buckets[p] = self.insertion(bucket,p,c[1])
-            self.accesses += 1
-            print(len(buckets[p]))
+            self.accesses += 3
+            
+            self.array[cumulative_length:cumulative_length+len(bucket)] = self.insertion(bucket,cumulative_length)
+            cumulative_length += len(buckets[p])
 
-            self.display.events()
-            self.display.add_green([p for p,i in enumerate(self.array) if i == sorted(self.array)[p]])
-            self.display.draw(self.merge_buckets(buckets,self.array,True))
-            self.display.draw_other(self.accesses,self.comparisons)
+        self.display.add_green(range(len(self.array)))
+        self.display.draw(self.array)
+        self.display.draw_other(self.accesses,self.comparisons)
 
-            pygame.display.flip()
-
-        self.merge_buckets(buckets,self.array)
+        pygame.display.flip()

@@ -2,6 +2,15 @@
 A visual representation of sorting algorithms in Python 3.x using the Pygame library.\
 To run, open main.py.
 
+Some of the fastest algorithms are (including graphically):
+- Quicksort
+- Mergesort
+- Heapsort
+- Radix sort
+- Shellsort
+- Binary Insertion sort
+- Strand sort
+
 # Requirements
 I am using the [Python 3.7](https://www.python.org/downloads/release/python-370/) IDLE.\
 Download project and run main.py to use.\
@@ -12,7 +21,7 @@ If you are running any version before 3.6, you will need to rewrite all f-string
 - % operator
 - format() method
 
-# Finished Algorithms
+# Efficiencies
 - Quicksort
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
     - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n log n)`

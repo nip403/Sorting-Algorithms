@@ -36,10 +36,10 @@ class MergeBU:
 
             self.display.events()
 
-            if self.tmp3 == 2:
+            if self.tmp[2] == 2:
                 self.display.add_green(range(len(out)))
             
-            self.display.draw(self.tmp+out+total+self.tmp2,len(self.tmp+out),len(self.tmp+out+total),len(self.tmp))
+            self.display.draw(self.tmp[0]+out+total+self.tmp[1],len(self.tmp[0]+out),len(self.tmp[0]+out+total),len(self.tmp[0]))
             self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()
@@ -54,22 +54,21 @@ class MergeBU:
             return groups
         
         out = []
-        self.display.events()
-        self.display.draw(self.get_drawable(groups))
-        pygame.display.flip()
-
         self.accesses += 1
+        
         for i in range(0,len(groups),2):
             self.clock.tick(self.fps)
-            self.tmp = self.get_drawable(out)
-            self.tmp2 = self.get_drawable(groups[i+2:])
-            self.tmp3 = len(groups)
-
+            
+            self.tmp = [self.get_drawable(out),self.get_drawable(groups[i+2:]),len(groups)]
             self.accesses += 2
             self.comparisons += 1
+            
             out.append(self.merge(groups[i],groups[i+1] if i+1 < len(groups) else None))
 
+        self.display.events()
         self.display.draw(self.get_drawable(out))
+        self.display.draw_other(self.accesses,self.comparisons)
+        
         pygame.display.flip()
 
         return self.sort(out)

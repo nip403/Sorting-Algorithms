@@ -13,25 +13,29 @@ class Gnome:
         left = 1
         right = 2
 
+        setattr(self.display,"green",[0])
+
         while left < len(self.array):
             self.clock.tick(self.fps)
-
+            self.accesses += 2
             self.comparisons += 1
+            
             if self.array[left-1] <= self.array[left]:
                 left,right = right,right+1
-                self.accesses += 2
                 
             else:
                 self.array[left-1],self.array[left] = self.array[left],self.array[left-1]
                 left -= 1
-                self.accesses += 6
+                
+                self.accesses += 4
+                self.comparisons += 1
 
-                if left == 0:
+                if not left:
                     left,right = right,right+1
 
             self.display.events()
-            self.display.add_green([self.array.index(i) for i in self.array[:right]])
-            self.display.draw(self.array,left,right,left-1,right+1)
+            self.display.add_green([left],False)
+            self.display.draw(self.array,left,right,left-1)
             self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()

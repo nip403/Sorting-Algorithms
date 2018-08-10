@@ -19,13 +19,16 @@ class Shell:
             
             for i in range(gap,n):
                 self.clock.tick(self.fps)
+                self.accesses += 2
+                self.comparisons += 2
+                
                 tmp = self.array[i]
-                self.accesses += 1
-
                 j = i
+                
                 while j >= gap and self.array[j-gap] > tmp:
                     self.accesses += 3
                     self.comparisons += 2
+                    
                     self.array[j] = self.array[j-gap]
                     j -= gap
 

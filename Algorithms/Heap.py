@@ -55,6 +55,7 @@ class Heap:
             
             pygame.display.flip()
 
+        self.display.add_green([len(self.array)-1])
         for end in range(len(self.array)-1,0,-1):
             self.clock.tick(self.fps)
             

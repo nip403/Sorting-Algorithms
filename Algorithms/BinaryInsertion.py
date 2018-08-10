@@ -10,7 +10,9 @@ class BinaryInsertion:
         self.comparisons = 0
 
     def main(self):
+        self.display.add_green([0])
         self.accesses += 1
+        
         for i in range(1,len(self.array)):
             self.clock.tick(self.fps)
             
@@ -43,7 +45,7 @@ class BinaryInsertion:
             self.array[:] = self.array[:low] + [key] + self.array[low:i] + self.array[i+1:]
 
             self.display.events()
-            self.display.add_green([self.array.index(i) for i in self.array[:i+1]])
+            self.display.add_green([i],False)
             self.display.draw(self.array,low,i,mid,high)
             self.display.draw_other(self.accesses,self.comparisons)
 

@@ -9,8 +9,6 @@ class MergeTD:
         self.accesses = 0
         self.comparisons = 0
 
-        self.green = []
-        
     def m(self,array,i0,i1):
         self.clock.tick(self.fps)
         final = len(array) == len(self.array)
@@ -30,17 +28,17 @@ class MergeTD:
         
         while len(total):
             self.clock.tick(self.fps)
-            
-            self.comparisons += 4
+
             self.accesses += 4
+            self.comparisons += 4
 
             new.append(min(total))
             self.array[l0+len(new)-1] = min(total)
+            
             del total[total.index(min(total))]
 
             if final:
-                self.green.append(len(self.green))
-                self.display.add_green(self.green)
+                self.display.add_green([len(new)],False)
 
             self.display.events()
             self.display.draw(self.array,i0,i1,l0,l1,r0,r1,l0+len(new)-1)
@@ -51,4 +49,5 @@ class MergeTD:
         return new,l0,r1
 
     def main(self):
+        self.accesses += 1
         self.m(self.array,0,len(self.array)-1)

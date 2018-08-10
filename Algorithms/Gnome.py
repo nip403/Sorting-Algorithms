@@ -13,7 +13,7 @@ class Gnome:
         left = 1
         right = 2
 
-        setattr(self.display,"green",[0])
+        self.display.add_green([0])
 
         while left < len(self.array):
             self.clock.tick(self.fps)

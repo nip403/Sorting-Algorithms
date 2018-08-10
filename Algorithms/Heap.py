@@ -14,22 +14,25 @@ class Heap:
 
         while True:
             self.clock.tick(self.fps)
+            self.comparisons += 1
             child = root * 2 + 1
 
             if child > end:
-                self.comparisons += 1
-                break
+                return array
+
+            self.accesses += 4
+            self.comparisons += 3
+            
             if child + 1 <= end and array[child] < array[child + 1]:
-                self.comparisons += 2
-                self.accesses += 1
                 child += 1
+                
             if array[root] < array[child]:
-                self.comparisons += 1
+                self.accesses += 4
+                
                 array[root],array[child] = array[child],array[root]
-                self.accesses += 6
                 root = child
             else:
-                break
+                return array
 
             self.display.events()
             self.display.draw(array,child,root,start,end)
@@ -37,10 +40,9 @@ class Heap:
             
             pygame.display.flip()
 
-        return array
-
     def main(self):
         self.accesses += 1
+        
         for start in range(int((len(self.array)-2)/2),-1,-1):
             self.clock.tick(self.fps)
             
@@ -54,6 +56,7 @@ class Heap:
             pygame.display.flip()
 
         self.accesses += 1
+        
         for end in range(len(self.array)-1,0,-1):
             self.clock.tick(self.fps)
             
@@ -61,7 +64,7 @@ class Heap:
             self.array = self.siftdown(self.array,0,end-1)
 
             self.display.events()
-            self.display.add_green([self.array.index(i) for i in self.array[end-1:]])
+            self.display.add_green([end-1],False)
             self.display.draw(self.array,end)
             self.display.draw_other(self.accesses,self.comparisons)
             

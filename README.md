@@ -98,9 +98,9 @@ If you are running any version before 3.6, you will need to rewrite all f-string
     - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n+k)`
     - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2)`
 - Minmax Sort
-    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n^2/2)`
-    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n^2/2)`
-    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n^2/2)`
+    - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n!!)`
+    - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n!!)`
+    - ![](https://placehold.it/15/ff0000/000000?text=+) `Worst Case: O(n!!)`
 - Merge Sort (BottomUp, out of place)
     - ![](https://placehold.it/15/00ff00/000000?text=+) `Best Case: O(n log n)`
     - ![](https://placehold.it/15/ffff00/000000?text=+) `Average Case: O(n log n)`
@@ -109,7 +109,6 @@ If you are running any version before 3.6, you will need to rewrite all f-string
 # Problems
 - Validate Circle sort's average case time complexity
 - Validate Shell sort's average and worst case time complexity
-- Validate all of Minmax Sort's time complexities (it was calculated on the fact that it is a 2 way selection sort)
 
 # To-do List
 - Bitonic Sort

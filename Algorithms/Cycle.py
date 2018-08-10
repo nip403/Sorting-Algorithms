@@ -13,14 +13,15 @@ class Cycle:
         self.accesses += 1
         for i in range(len(self.array)-1):
             self.clock.tick(self.fps)
+            self.accesses += 2
             
             item = self.array[i]
-            self.accesses += 2
             pos = i
            
             for j in range(i+1,len(self.array)):
                 if self.array[j] < item:
                     pos += 1
+                    
                 self.accesses += 1
                 self.comparisons += 1
 
@@ -30,7 +31,6 @@ class Cycle:
             self.array[pos],item = item,self.array[pos]
             self.accesses += 2
 
-            self.display.events()
             self.display.draw(self.array,pos,i,j)
             self.display.draw_other(self.accesses,self.comparisons)
 
@@ -52,8 +52,14 @@ class Cycle:
                 self.accesses += 1
 
                 self.display.events()
-                self.display.add_green([p for p,m in enumerate(self.array) if m == sorted(self.array)[p]])
+                self.display.add_green([pos],False)
                 self.display.draw(self.array,i,j,pos)
                 self.display.draw_other(self.accesses,self.comparisons)
 
                 pygame.display.flip()
+
+        self.display.add_green(range(len(self.array)))
+        self.display.draw(self.array,pos)
+        self.display.draw_other(self.accesses,self.comparisons)
+
+        pygame.display.flip()

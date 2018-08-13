@@ -23,6 +23,11 @@ class Bubble:
                 lim -= 1
                 
                 if not changed:
+                    self.display.add_green(range(len(self.array)))
+                    self.display.draw(self.array)
+                    self.display.draw_other(self.accesses,self.comparisons)
+
+                    pygame.display.flip()
                     return
                 
                 changed = False

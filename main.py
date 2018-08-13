@@ -50,7 +50,7 @@ def main():
         "o":["Odd-Even",M.oddeven],
         "k":["Shell",M.shell],
         "l":["Comb",M.comb],
-        "i":["Insertion",M.insertion],
+        "a":["Insertion",M.insertion],
         "m":["Merge (TopDown)",M.mergetd],
         "r":["Radix (LSD)",M.radixlsd],
         "x":["Counting",M.counting],
@@ -61,7 +61,7 @@ def main():
         "u":["Binary Insertion",M.binaryinsertion],
         "p":["Pancake",M.pancake],
         "d":["Permutation",M.permutation],
-        "n":["Strand",M.strand],
+        "z":["Strand",M.strand],
         "v":["Bucket",M.bucket],
         "e":["MinMax",M.minmax],
         "t":["Merge (BottomUp)",M.mergebu]

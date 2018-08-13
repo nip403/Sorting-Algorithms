@@ -1,4 +1,5 @@
 import pygame
+import math
 import sys
 
 class Display:
@@ -24,17 +25,15 @@ class Display:
         self.surface.fill(background)
 
         for index,item in enumerate(array):
-            if self.bars:
-                
+            if self.bars: 
                 if index in highlighted:
-                    pygame.draw.rect(self.surface,self.sorting_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
+                    pygame.draw.rect(self.surface,self.sorting_colour,(index*self.thickness,math.ceil(self.s[1]-(item/len(array)*self.s[1])),self.thickness,math.ceil(item/len(array)*self.s[1])),0)
                 elif index in self.green:
-                    pygame.draw.rect(self.surface,self.done_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
+                    pygame.draw.rect(self.surface,self.done_colour,(index*self.thickness,math.ceil(self.s[1]-(item/len(array)*self.s[1])),self.thickness,math.ceil(item/len(array)*self.s[1])),0)
                 else:
-                    pygame.draw.rect(self.surface,self.base_colour,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1]),self.thickness,item/len(array)*self.s[1]),0)
+                    pygame.draw.rect(self.surface,self.base_colour,(index*self.thickness,math.ceil(self.s[1]-(item/len(array)*self.s[1])),self.thickness,math.ceil(item/len(array)*self.s[1])),0)
 
             else:
-                
                 if index in highlighted:
                     pygame.draw.circle(self.surface,self.sorting_colour if not index in highlighted else self.sorting_colour,list(map(int,(index*self.thickness,self.s[1]-(item/len(array)*self.s[1])))),1,0)
                 elif index in self.green:

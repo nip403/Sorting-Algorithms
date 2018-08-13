@@ -4,7 +4,7 @@ import pygame
 import sys
 
 # Options
-arr_length = 200
+arr_length = 100
 fps = 0
 draw_bars = True
 

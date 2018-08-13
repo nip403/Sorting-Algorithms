@@ -38,7 +38,7 @@ class MergeTD:
             del total[total.index(min(total))]
 
             if final:
-                self.display.add_green([len(new)],False)
+                self.display.add_green([len(new)-1],False)
 
             self.display.events()
             self.display.draw(self.array,i0,i1,l0,l1,r0,r1,l0+len(new)-1)

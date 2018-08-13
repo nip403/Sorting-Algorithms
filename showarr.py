@@ -1,4 +1,5 @@
 import pygame
+import math
 import random
 
 class Show_array:
@@ -20,7 +21,7 @@ class Show_array:
 
         for p,i in enumerate(self.array):
             if self.bars:
-                pygame.draw.rect(self.surf,(255,255,255),(p*self.thick,self.dimensions[1]-(i/len(self.array)*self.dimensions[1]),self.thick,i/self.length*self.dimensions[1]),0)
+                pygame.draw.rect(self.surf,(255,255,255),(p*self.thick,math.ceil(self.dimensions[1]-(i/len(self.array)*self.dimensions[1])),math.ceil(self.thick),math.ceil(i/self.length*self.dimensions[1])),0)
             else:
                 pygame.draw.circle(self.surf,(255,255,255),list(map(int,(p*self.thick,self.dimensions[1]-(i/len(self.array)*self.dimensions[1])))),1,0)
         

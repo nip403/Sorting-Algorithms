@@ -12,30 +12,36 @@ class Bucket:
 
     def insertion(self,array,clength):
         self.accesses += 1
+        self.display.add_green([clength],False)
         
         for i in range(1,len(array)):
-            j = i-1
             key = array[i]
+            low = 0
+            high = i
             self.accesses += 2
             self.comparisons += 2
 
-            while j >= 0 and array[j] > key:
+            while high > low:
                 self.clock.tick(self.fps)
-                self.accesses += 3
-                self.comparisons += 2
+                self.accesses += 1
+                self.comparisons += 1
                 
-                array[j+1] = array[j]
-                j -= 1
+                mid = (low+high)//2
+                
+                if array[mid] < key:
+                    low = mid+1
+                else:
+                    high = mid
 
                 self.display.events()
-                self.display.add_green([p+clength for p,i in enumerate(array) if sorted(array)[p] == i],False)
-                self.display.draw(self.array[:clength] + array + self.array[clength+len(array):],clength,clength+j,clength+i)
+                self.display.add_green([array.index(key)+clength],False)
+                self.display.draw(self.array[:clength] + array + self.array[clength+len(array):],clength,clength+mid,clength+i,clength+high,clength+low)
                 self.display.draw_other(self.accesses,self.comparisons)
 
                 pygame.display.flip()
-    
-            array[j+1] = key
-            self.accesses += 1
+
+            array[:] = array[:low]+[key]+array[low:i]+array[i+1:]
+            self.accesses += len(array)
 
         return array
 

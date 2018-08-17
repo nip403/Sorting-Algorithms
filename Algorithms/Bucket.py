@@ -84,13 +84,19 @@ class Bucket:
 
         for p0,i in enumerate(self.array):
             self.clock.tick(self.fps)
-            
-            buckets[self.re_hash(i,c)].append(i)
+
+            p = self.re_hash(i,c)
+            buckets[p].append(i)
             self.accesses += 1
             tmp = self.merge_buckets(buckets,self.array,True)
+
+            l = p
+            for k in buckets[:p]:
+                for v in k:
+                    l += 1
             
             self.display.events()
-            self.display.draw(tmp+self.array[len(tmp):],p0)
+            self.display.draw(tmp+self.array[len(tmp):],p0,l)
             self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()

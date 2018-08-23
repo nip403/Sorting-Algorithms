@@ -44,6 +44,12 @@ class Strand:
         array = self.array[:]
         out = self.strand(array)
 
+        self.display.add_green(range(len(out)))
+        self.display.draw(self.array)
+        self.display.draw_other(self.accesses,self.comparisons)
+            
+        pygame.display.flip()
+
         while len(array):
             self.accesses += 1
             self.comparisons += 1

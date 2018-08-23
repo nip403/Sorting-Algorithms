@@ -1,5 +1,6 @@
 from algs import methods
 from showarr import Show_array
+from mode_selector import mode_selector
 import pygame
 import sys
 
@@ -32,7 +33,13 @@ print("  To run, press ENTER.")
 print("  To toggle between drawing bars and dots, press BACKSPACE.")
 print("\n  To change the list size, use either:")
 print("\tUP and DOWN arrows (these change the size by 10).")
-print("\tLEFT and RIGHT arrows (these change the size by 1).")
+print("\tLEFT and RIGHT arrows (these change the size by 1).\n")
+print("  There are 4 sorting modes:")
+print("\tRandom: List randomly shuffled (Default)")
+print("\tAscending: List in ascending order")
+print("\tDescending: List in descending order")
+print("\tNearly Sorted: List nearly sorted")
+print("  Click on the box saying the mode to cycle between modes.")
 print("\n |----                                                    ----| \n")
 
 def main():
@@ -40,6 +47,7 @@ def main():
 
     # Initialisations
     M = methods(fps,clock,screen,smallfont,draw_bars,s)
+    MS = mode_selector([450,470],[100,50],smallfont)
 
     all_sorts = {
         "b":["Bubble",M.bubble],
@@ -71,11 +79,11 @@ def main():
     head2 = medfont.render("Types:",True,(255,255,140))
     head3 = medfont.render("Array:",True,(255,255,255))
 
-    show = Show_array(arr_length,(300,200),draw_bars)
+    show = Show_array(arr_length,(300,200),draw_bars,MS.state)
     typelist = [[labels.render(f"{all_sorts[i][0]} Sort: '{i}'",True,(255,145,140)),[120,130+(p*23)]] for p,i in enumerate(all_sorts.keys())]
 
     current = "b"
-
+    
     while True:
         # Frame Rate
         clock.tick(15)
@@ -91,7 +99,7 @@ def main():
                     for name,data in all_sorts.items():
                         if current == name:
                             pygame.display.set_caption(f"Sorting Algorithms by NIP |||| List size: {arr_length} |||| Sorting method: {data[0]} Sort")
-                            M.setup(arr_length)
+                            M.setup(arr_length,MS.state)
                             
                             data[1]()
                             pygame.time.wait(500)
@@ -104,7 +112,11 @@ def main():
                     
                 else:
                     current = chr(event.key) if chr(event.key) in "abcdefghijklmnopqrstuvwxyz1234567890" else current
-                    
+
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if MS.change_mode(pygame.mouse.get_pos()):
+                    show = Show_array(arr_length,(300,200),draw_bars,MS.state)
+                
         # User changes array length
         if pygame.key.get_pressed()[pygame.K_UP] or pygame.key.get_pressed()[pygame.K_DOWN] or pygame.key.get_pressed()[pygame.K_RIGHT] or pygame.key.get_pressed()[pygame.K_LEFT]:
 
@@ -116,8 +128,8 @@ def main():
                 arr_length = 4
 
             # Re-initialise
-            M.setup(arr_length)
-            show = Show_array(arr_length,(300,200),draw_bars)
+            M.setup(arr_length,MS.state)
+            show = Show_array(arr_length,(300,200),draw_bars,MS.state)
 
         # Drawing
         screen.fill((0,0,0))
@@ -133,6 +145,7 @@ def main():
         screen.blit(head3,(750,140))
 
         show.draw(screen,[640,200],[740,440],labels)
+        MS.draw(screen)
 
         for i in typelist:
             screen.blit(i[0],i[1])

@@ -39,10 +39,27 @@ class methods:
         self.bars = bars
         self.windowsize = windowsize
 
-    def setup(self,length):
-        self.array = list(range(length))
-        random.shuffle(self.array)
+    def get_array(self,length,mode=0):
+        arr = list(range(length))
+        
+        if not mode:
+            random.shuffle(arr)
+        elif mode == 2:
+            arr = arr[::-1]
+        elif mode == 3:
+            for i in range(length-1):
+                if random.randint(0,10) < 8:
+                    tmp = random.randint(4,15)
+                    try:
+                        arr[i],arr[i+tmp] = arr[i+tmp],arr[i]
+                    except:
+                        pass
 
+        return arr
+
+    def setup(self,length,mode=0):
+        self.array = self.get_array(length,mode)
+                
         self.display = Display(self.windowsize[0]/length,self.windowsize,self.surface,self.font)
         self.accesses = 0
         self.comparisons = 0

@@ -1,6 +1,27 @@
 # Sorting-Algorithms
 A visual representation of sorting algorithms in Python 3.x using the Pygame library.\
-To run, open main.py.
+
+# Installation
+
+You can download the zipped version above, or (if you're using Windows) run the following in your command line:
+
+```
+git clone https://github.com/nip403/Sorting-Algorithms.git Desktop && cd Sorting-Algorithms-master
+```
+
+# Execution
+
+After the installation, you should be located in the correct directory. If not, run the following:
+
+```
+cd Desktop\Sorting-Algorithms-master
+```
+
+Then, to run:
+
+```
+py main.py
+```
 
 # Requirements
 I am using the [Python 3.7](https://www.python.org/downloads/release/python-370/) IDLE.\

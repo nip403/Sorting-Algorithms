@@ -14,13 +14,8 @@ class Bogo:
         check = lambda arr,acc,com: [all([arr[i+1] > arr[i] for i in range(len(arr)-1)]),2*len(self.array)+acc+1,len(self.array)+com]
 
         while True:
-            state,self.accesses,self.comparisons = check(self.array,self.accesses,self.comparisons)
-
-            if state:
-                break
-
             self.clock.tick(self.fps)
-            random.shuffle(self.array)
+            state,self.accesses,self.comparisons = check(self.array,self.accesses,self.comparisons)
 
             self.display.events()
             self.display.add_green([p for p,i in enumerate(self.array) if sorted(self.array)[p] == self.array[p]])
@@ -28,3 +23,8 @@ class Bogo:
             self.display.draw_other(self.accesses,self.comparisons)
 
             pygame.display.flip()
+
+            if state:
+                return
+
+            random.shuffle(self.array)

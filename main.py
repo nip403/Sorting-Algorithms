@@ -25,22 +25,23 @@ smallfont = pygame.font.SysFont("Garamond MS",20)
 labels = pygame.font.SysFont("comicsansms",20)
 
 # User Instructions
-print("\n |----                                                    ----| \n")
-print("  To download the code: go to:")
-print("\thttps://github.com/nip403/Sorting-Algorithms\n")
-print("  To select the sorting mode, press the letters under \"Types\".")
-print("  To run, press ENTER.")
-print("  To toggle between drawing bars and dots, press BACKSPACE.")
-print("\n  To change the list size, use either:")
-print("\tUP and DOWN arrows (these change the size by 10).")
-print("\tLEFT and RIGHT arrows (these change the size by 1).\n")
-print("  There are 4 sorting modes:")
-print("\tRandom: List randomly shuffled (Default)")
-print("\tAscending: List in ascending order")
-print("\tDescending: List in descending order")
-print("\tNearly Sorted: List nearly sorted")
-print("  Click on the box saying the mode to cycle between modes.")
-print("\n |----                                                    ----| \n")
+def print_instructions():
+    print("\n |----                                                    ----| \n")
+    print("  To download the code: go to:")
+    print("\thttps://github.com/nip403/Sorting-Algorithms\n")
+    print("  To select the sorting mode, press the letters under \"Types\".")
+    print("  To run, press ENTER.")
+    print("  To toggle between drawing bars and dots, press BACKSPACE.")
+    print("\n  To change the list size, use either:")
+    print("\tUP and DOWN arrows (these change the size by 10).")
+    print("\tLEFT and RIGHT arrows (these change the size by 1).\n")
+    print("  There are 4 sorting modes:")
+    print("\tRandom: List randomly shuffled (Default)")
+    print("\tAscending: List in ascending order")
+    print("\tDescending: List in descending order")
+    print("\tNearly Sorted: List nearly sorted")
+    print("  Click on the box saying the mode to cycle between modes.")
+    print("\n |----                                                    ----| \n")
 
 def main():
     global arr_length,draw_bars
@@ -58,7 +59,7 @@ def main():
         "o":["Odd-Even",M.oddeven],
         "k":["Shell",M.shell],
         "l":["Comb",M.comb],
-        "a":["Insertion",M.insertion],
+        "i":["Insertion",M.insertion],
         "m":["Merge (TopDown)",M.mergetd],
         "r":["Radix (LSD)",M.radixlsd],
         "x":["Counting",M.counting],
@@ -72,16 +73,17 @@ def main():
         "z":["Strand",M.strand],
         "v":["Bucket",M.bucket],
         "e":["MinMax",M.minmax],
-        "t":["Merge (BottomUp)",M.mergebu]
+        "t":["Merge (BottomUp)",M.mergebu],
+        "a":["Bitonic",M.bitonic]
     }
     
     head1 = medfont.render("Enter Sorting Type:",True,(140,140,255))
-    head2 = medfont.render("Types:",True,(255,255,140))
-    head3 = medfont.render("Array:",True,(255,255,255))
+    head2 = medfont.render("Array:",True,(255,255,255))
 
     show = Show_array(arr_length,(300,200),draw_bars,MS.state)
-    typelist = [[labels.render(f"{all_sorts[i][0]} Sort: '{i}'",True,(255,145,140)),[120,130+(p*23)]] for p,i in enumerate(all_sorts.keys())]
+    typelist = [[labels.render(f"{all_sorts[i][0]} Sort: '{i}'",True,(255,145,140)),[120,90+(p*23)]] for p,i in enumerate(all_sorts.keys())]
 
+    print_instructions()
     current = "b"
     
     while True:
@@ -141,8 +143,7 @@ def main():
             pygame.draw.circle(screen,(140,140,140),list(map(int,(s[0]/2+i[0],s[1]/2+i[1]))),4,0)
 
         screen.blit(head1,(40,40))
-        screen.blit(head2,(60,90))
-        screen.blit(head3,(750,140))
+        screen.blit(head2,(750,140))
 
         show.draw(screen,[640,200],[740,440],labels)
         MS.draw(screen)

@@ -76,6 +76,5 @@ ADDITIONAL INFO:
 - Validate Strand Sort's space complexity
 
 # To-do List
-- Bitonic Sort
 - Radix Sort (MSD)
 - Quicksort (2 pivots)

@@ -98,7 +98,7 @@ def main():
                 if event.key == pygame.K_RETURN:                    
                     for name,data in all_sorts.items():
                         if current == name:
-                            pygame.display.set_caption(f"Sorting Algorithms by NIP |||| List size: {arr_length} |||| Sorting method: {data[0]} Sort")
+                            pygame.display.set_caption(f"Sorting Algorithms by NIP |||| List size: {arr_length} |||| Sorting method: {data[0]} Sort |||| Sorting mode: {MS.mode}")
                             M.setup(arr_length,MS.state)
                             
                             data[1]()

@@ -45,7 +45,7 @@ class Strand:
         out = self.strand(array)
 
         self.display.add_green(range(len(out)))
-        self.display.draw(self.array)
+        self.display.draw(self.array,*range(len(out),len(array)))
         self.display.draw_other(self.accesses,self.comparisons)
             
         pygame.display.flip()

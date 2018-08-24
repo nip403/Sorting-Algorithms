@@ -53,6 +53,7 @@ class Circle:
 
     def main(self):
         s = 1
+        self.display.add_green([p for p,i in enumerate(self.array) if sorted(self.array)[p] == i])
 
         while s:
             self.clock.tick(self.fps)

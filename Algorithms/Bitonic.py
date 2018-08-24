@@ -23,8 +23,12 @@ class Bitonic:
             m = 2**(math.floor(math.log2(n-1)))
 
             for i in range(low,low+n-m):
+                self.accesses += 2
+                self.comparisons += 2
+                
                 if direction == (self.array[i]>self.array[i+m]):
                     self.clock.tick(self.fps)
+                    self.accesses += 4
                     
                     self.array[i],self.array[i+m] = self.array[i+m],self.array[i]
 

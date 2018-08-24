@@ -29,7 +29,7 @@ def print_instructions():
     print("\n |----                                                    ----| \n")
     print("  To download the code: go to:")
     print("\thttps://github.com/nip403/Sorting-Algorithms\n")
-    print("  To select the sorting mode, press the letters under \"Types\".")
+    print("  To select the sorting mode, select the desired letter.")
     print("  To run, press ENTER.")
     print("  To toggle between drawing bars and dots, press BACKSPACE.")
     print("\n  To change the list size, use either:")

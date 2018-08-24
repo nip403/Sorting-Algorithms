@@ -29,6 +29,7 @@ from Strand import Strand
 from Bucket import Bucket
 from MinMax import MinMax
 from MergeBU import MergeBU
+from Bitonic import Bitonic
 
 class methods:
     def __init__(self,fps,clockObject,surface,font,bars,windowsize):
@@ -89,3 +90,4 @@ class methods:
     bucket = lambda self: Bucket(self.array,self.display,self.clock,self.fps).main()
     minmax = lambda self: MinMax(self.array,self.display,self.clock,self.fps).main()
     mergebu = lambda self: MergeBU(self.array,self.display,self.clock,self.fps).main()
+    bitonic = lambda self: Bitonic(self.array,self.display,self.clock,self.fps).main()

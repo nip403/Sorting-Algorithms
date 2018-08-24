@@ -60,6 +60,7 @@ If you are running any version before 3.6, you will need to rewrite all f-string
 |Bucket sort|O(n+k)|O(n+k)|O(n^2)|O(n * k)|★★★★☆|
 |MinMax sort|t=0,n//2 ∑ (n-2t)|t=0,n//2 ∑ (n-2t)|t=0,n//2 ∑ (n-2t)|O(2)|★★★☆☆|
 |Merge sort (BottomUp, out of place)|O(n log n)|O(n log n)|O(n log n)|O(n)|★★★★★|
+|Bitonic Sort|O(log^2(n))|O(log^2(n))|O(log^2(n))|O(n log^2(n))|★★★★☆|
 
 ADDITIONAL INFO:
 - Best case, average case and worst case all describe the algorithm's time complexity

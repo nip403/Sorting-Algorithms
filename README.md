@@ -58,7 +58,7 @@ If you are running any version before 3.6, you will need to rewrite all f-string
 |Permutation sort|O(n)|O(n!)|O(n!)|O(n)|★☆☆☆☆|
 |Strand sort|O(n)|O(n√n)|O(n^2)|O(n)|★★★☆☆|
 |Bucket sort|O(n+k)|O(n+k)|O(n^2)|O(n * k)|★★★★☆|
-|MinMax sort|t=0,n//2 ∑ (n-2t)|t=0,n//2 ∑ (n-2t)|t=0,n//2 ∑ (n-2t)|O(2)|★★★☆☆|
+|MinMax sort|![](https://latex.codecogs.com/gif.latex?\sum_{t=0}^{n//2}n-2t)|![](https://latex.codecogs.com/gif.latex?\sum_{t=0}^{n//2}n-2t)|![](https://latex.codecogs.com/gif.latex?\sum_{t=0}^{n//2}n-2t)|O(2)|★★★☆☆|
 |Merge sort (BottomUp, out of place)|O(n log n)|O(n log n)|O(n log n)|O(n)|★★★★★|
 |Bitonic Sort|O(log^2(n))|O(log^2(n))|O(log^2(n))|O(n log^2(n))|★★★★☆|
 
@@ -68,7 +68,6 @@ ADDITIONAL INFO:
 - Comb Sort: p = amount of increments
 - Radix Sort: W = maximum number of digits, w = word size or significant digits
 - Counting and Bucket Sort: k = range of inputs
-- MinMax sort: sum of n-2t from t=0 to t=n//2
 
 # Problems
 - Validate Circle sort's average case time complexity and space complexity

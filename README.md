@@ -28,10 +28,6 @@ I am using the [Python 3.7](https://www.python.org/downloads/release/python-370/
 Python 3.6 and Pygame 1.7.x or above is required.\
 You can download pygame either [here](https://www.pygame.org/download.shtml),[here](https://bitbucket.org/pygame/pygame/downloads/) or [here](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pygame).
 
-If you are running any version before 3.6, you will need to rewrite all f-strings using either of the following:
-- % operator
-- format() method
-
 # Algorithms
 
 |Name|![](https://placehold.it/15/00ff00/000000?text=+) Best Case|![](https://placehold.it/15/ffff00/000000?text=+) Average Case|![](https://placehold.it/15/ff0000/000000?text=+) Worst Case|Space Complexity|Usability|

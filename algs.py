@@ -30,6 +30,8 @@ from Bucket import Bucket
 from MinMax import MinMax
 from MergeBU import MergeBU
 from Bitonic import Bitonic
+from Stooge import Stooge
+from Smooth import Smooth
 
 class methods:
     def __init__(self,fps,clockObject,surface,font,bars,windowsize):
@@ -91,3 +93,5 @@ class methods:
     minmax = lambda self: MinMax(self.array,self.display,self.clock,self.fps).main()
     mergebu = lambda self: MergeBU(self.array,self.display,self.clock,self.fps).main()
     bitonic = lambda self: Bitonic(self.array,self.display,self.clock,self.fps).main()
+    stooge = lambda self: Stooge(self.array,self.display,self.clock,self.fps).main()
+    smooth = lambda self: Smooth(self.array,self.display,self.clock,self.fps).main()

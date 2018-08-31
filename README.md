@@ -36,7 +36,7 @@ You can download pygame either [here](https://www.pygame.org/download.shtml),[he
 |Bubble sort|O(n)|O(n^2)|O(n^2)|O(1)|★★☆☆☆|
 |Selection sort|O(n^2)|O(n^2)|O(n^2)|O(1)|★★☆☆☆|
 |Cocktail Shaker sort|O(n)|O(n^2)|O(n^2)|O(1)|★★★☆☆|
-|Bogo sort|O(n)|O((n+1)!)|O(Infinity)|O(n)|☆☆☆☆☆|
+|Bogo sort|O(n)|O((n+1)!)|O(Infinity)|O(1)|☆☆☆☆☆|
 |Odd-Even sort|O(n)|O(n^2)|O(n^2)|O(1)|★★★☆☆|
 |Shell sort (original gap sequence)|O(n log n)|O(n^2)|O(n^2)|O(1)|★★★★☆|
 |Comb sort|O(n log n)|O(n^2 / 2^p)|O(n^2)|O(1)|★★★☆☆|
@@ -56,6 +56,8 @@ You can download pygame either [here](https://www.pygame.org/download.shtml),[he
 |MinMax sort|![](https://latex.codecogs.com/gif.latex?\sum_{t=0}^{n//2}n-2t)|![](https://latex.codecogs.com/gif.latex?\sum_{t=0}^{n//2}n-2t)|![](https://latex.codecogs.com/gif.latex?\sum_{t=0}^{n//2}n-2t)|O(2)|★★★☆☆|
 |Merge sort (BottomUp, out of place)|O(n log n)|O(n log n)|O(n log n)|O(n)|★★★★★|
 |Bitonic Sort|O(log^2(n))|O(log^2(n))|O(log^2(n))|O(n log^2(n))|★★★★☆|
+|Stooge Sort|O(1)|O(n^(log 3/log 1.5))|O(n^(log 3/log 1.5))|O(n)|★☆☆☆☆|
+|Smooth Sort|O(n)|O(n log n)|O(n log n)|O(1)|★★☆☆☆|
 
 ADDITIONAL INFO:
 - Best case, average case and worst case all describe the algorithm's time complexity

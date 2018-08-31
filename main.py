@@ -74,14 +74,16 @@ def main():
         "v":["Bucket",M.bucket],
         "e":["MinMax",M.minmax],
         "t":["Merge (BottomUp)",M.mergebu],
-        "a":["Bitonic",M.bitonic]
+        "a":["Bitonic",M.bitonic],
+        "f":["Stooge",M.stooge],
+        "n":["Smooth",M.smooth]
     }
     
     head1 = medfont.render("Enter Sorting Type:",True,(140,140,255))
     head2 = medfont.render("Array:",True,(255,255,255))
 
     show = Show_array(arr_length,(300,200),draw_bars,MS.state)
-    typelist = [[labels.render(f"{all_sorts[i][0]} Sort: '{i}'",True,(255,145,140)),[120,90+(p*23)]] for p,i in enumerate(all_sorts.keys())]
+    typelist = [[labels.render(f"{all_sorts[i][0]} Sort: '{i}'",True,(255,145,140)),[120,70+(p*23)]] for p,i in enumerate(all_sorts.keys())]
 
     print_instructions()
     current = "b"
@@ -142,7 +144,7 @@ def main():
         for i in [[100,100],[-100,-100],[100,-100],[-100,100]]:
             pygame.draw.circle(screen,(140,140,140),list(map(int,(s[0]/2+i[0],s[1]/2+i[1]))),4,0)
 
-        screen.blit(head1,(40,40))
+        screen.blit(head1,(40,30))
         screen.blit(head2,(750,140))
 
         show.draw(screen,[640,200],[740,440],labels)

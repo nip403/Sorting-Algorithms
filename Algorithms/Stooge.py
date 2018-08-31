@@ -10,8 +10,12 @@ class Stooge:
         self.comparisons = 0
 
     def sort(self,last,index=0):
+        self.accesses += 2
+        self.comparisons += 2
+        
         if self.array[index] > self.array[last]:
             self.clock.tick(self.fps)
+            self.accesses += 4
             
             self.array[index],self.array[last] = self.array[last],self.array[index]
 

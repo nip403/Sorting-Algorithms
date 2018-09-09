@@ -69,9 +69,8 @@ ADDITIONAL INFO:
 # Problems
 - Validate Circle sort's average case time complexity and space complexity
 - Validate Shell sort's average case time complexity
-- Convert MinMax Sort's time complexities from summations into big O notation
 - Validate Strand Sort's space complexity
 
 # To-do List
 - Radix Sort (MSD)
-- Quicksort (2 pivots)
+- Convert MinMax Sort's time complexities from summations into big O notation

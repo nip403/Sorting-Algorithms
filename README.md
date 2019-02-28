@@ -44,11 +44,9 @@ ADDITIONAL INFO:
 - Radix Sort: W = maximum number of digits, w = word size or significant digits
 - Counting and Bucket Sort: k = range of inputs
 
-# Problems
+# To-do list
 - Validate Circle sort's average case time complexity and space complexity
 - Validate Shell sort's average case time complexity
 - Validate Strand Sort's space complexity
-
-# To-do List
 - Radix Sort (MSD)
 - Convert MinMax Sort's time complexities from summations into big O notation

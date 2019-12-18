@@ -53,3 +53,4 @@ ADDITIONAL INFO:
 - Validate Shell sort's average case time complexity
 - Validate Strand Sort's space complexity
 - Convert MinMax Sort's time complexities from summations into big O notation
+- Format above table to LaTeX

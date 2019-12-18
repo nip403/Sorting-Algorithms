@@ -1,7 +1,7 @@
 import pygame
 
 class Bubble:
-    def __init__(self,array,displayObject,clock,fps):
+    def __init__(self, array, displayObject, clock, fps):
         self.array = array
         self.display = displayObject
         self.clock = clock
@@ -11,7 +11,7 @@ class Bubble:
 
     def main(self):
         pos = 0
-        lim = len(self.array)-1
+        lim = len(self.array) - 1
         self.accesses += 1
         changed = False
 
@@ -25,7 +25,7 @@ class Bubble:
                 if not changed:
                     self.display.add_green(range(len(self.array)))
                     self.display.draw(self.array)
-                    self.display.draw_other(self.accesses,self.comparisons)
+                    self.display.draw_other(self.accesses, self.comparisons)
 
                     pygame.display.flip()
                     return
@@ -33,7 +33,7 @@ class Bubble:
                 changed = False
             
             if self.array[pos] > self.array[pos+1]:
-                self.array[pos],self.array[pos+1] = self.array[pos+1],self.array[pos]
+                self.array[pos] , self.array[pos+1] = self.array[pos+1] , self.array[pos]
                 changed = True
                 
             pos += 1
@@ -41,8 +41,8 @@ class Bubble:
             self.comparisons += 1
               
             self.display.events()
-            self.display.add_green([lim+1],False)
-            self.display.draw(self.array,pos,lim+1)
-            self.display.draw_other(self.accesses,self.comparisons)
+            self.display.add_green([lim+1], False)
+            self.display.draw(self.array, pos, lim+1)
+            self.display.draw_other(self.accesses, self.comparisons)
 
             pygame.display.flip()

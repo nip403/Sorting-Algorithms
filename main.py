@@ -19,10 +19,10 @@ clock = pygame.time.Clock()
 pygame.display.set_caption("Sorting Algorithms by NIP")
 
 # Fonts
-bigfont = pygame.font.SysFont("Garamond MS", 140)
-medfont = pygame.font.SysFont("Garamond MS", 40)
-smallfont = pygame.font.SysFont("Garamond MS", 20)
-labels = pygame.font.SysFont("comicsansms", 20)
+bigfont = pygame.font.SysFont("Calibri", 140)
+medfont = pygame.font.SysFont("Calibri", 40)
+smallfont = pygame.font.SysFont("Calibri", 20)
+labels = pygame.font.SysFont("Timesnewroman", 20)
 
 # User Instructions
 def print_instructions():
@@ -76,14 +76,16 @@ def main():
         "t": ["Merge (BottomUp)", M.mergebu],
         "a": ["Bitonic", M.bitonic],
         "f": ["Stooge", M.stooge],
-        "n": ["Smooth", M.smooth]
+        "n": ["Smooth", M.smooth],
+        "0": ["3-Partition Quick", M.quick3],
+        "1": ["[WIP] Tim", lambda: None],
     }
     
     head1 = medfont.render("Enter Sorting Type:", True, (140, 140, 255))
     head2 = medfont.render("Array:", True, (255, 255, 255))
 
     show = Show_array(arr_length, (300, 200), draw_bars, MS.state)
-    typelist = [[labels.render(f"{all_sorts[i][0]} Sort: '{i}'", True, (255, 145, 140)), [120, 70 + (p*23)]] for p, i in enumerate(all_sorts.keys())]
+    typelist = [[labels.render(f"{i.upper()}    {all_sorts[i][0]} Sort", True, (255, 145, 140)), [60, 30 + (p*23)]] for p, i in enumerate(all_sorts.keys())]
 
     print_instructions()
     current = "b"
@@ -144,7 +146,7 @@ def main():
         for i in [[100, 100], [-100, -100], [100, -100], [-100, 100]]:
             pygame.draw.circle(screen, (140, 140, 140), list(map(int, (s[0]/2 + i[0], s[1]/2 + i[1]))), 4, 0)
 
-        screen.blit(head1, (40, 30))
+        screen.blit(head1, head1.get_rect(center=[500, 60]))
         screen.blit(head2, (750, 140))
 
         show.draw(screen, [640, 200], [740, 440], labels)

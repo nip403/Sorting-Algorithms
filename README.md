@@ -45,8 +45,11 @@ ADDITIONAL INFO:
 - Counting and Bucket Sort: k = range of inputs
 
 # To-do list
+- Implement Timsort & complexities
+- Implement Radix MSD & complexities
+- Add Quicksort 3 complexities
+- Add sound
 - Validate Circle sort's average case time complexity and space complexity
 - Validate Shell sort's average case time complexity
 - Validate Strand Sort's space complexity
-- Radix Sort (MSD)
 - Convert MinMax Sort's time complexities from summations into big O notation

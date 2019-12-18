@@ -1,7 +1,7 @@
 import pygame
 
 class Selection:
-    def __init__(self,array,displayObject,clock,fps):
+    def __init__(self, array, displayObject, clock, fps):
         self.array = array
         self.display = displayObject
         self.clock = clock
@@ -12,11 +12,11 @@ class Selection:
     def main(self):
         self.accesses += 1
         
-        for i in range(0,len(self.array)-1):
+        for i in range(0, len(self.array) - 1):
             min_pos = i
             self.accesses += 2
 
-            for j in range(i+1,len(self.array)):
+            for j in range(i+1, len(self.array)):
                 self.clock.tick(self.fps)
                 self.accesses += 1
 
@@ -27,17 +27,17 @@ class Selection:
                 self.accesses += 2
 
                 self.display.events()
-                self.display.draw(self.array,j,min_pos,i)
-                self.display.draw_other(self.accesses,self.comparisons)
+                self.display.draw(self.array, j, min_pos, i)
+                self.display.draw_other(self.accesses, self.comparisons)
 
                 pygame.display.flip()
 
-            self.array[i],self.array[min_pos] = self.array[min_pos],self.array[i]
+            self.array[i], self.array[min_pos] = self.array[min_pos], self.array[i]
             self.accesses += 4
-            self.display.add_green([i],False)
+            self.display.add_green([i], False)
 
         self.display.add_green(range(len(self.array)))
-        self.display.draw(self.array,j,min_pos,i)
-        self.display.draw_other(self.accesses,self.comparisons)
+        self.display.draw(self.array, j, min_pos, i)
+        self.display.draw_other(self.accesses, self.comparisons)
 
         pygame.display.flip()

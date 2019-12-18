@@ -7,7 +7,7 @@ import sys
 sys.path.insert(0, "./Algorithms")
 
 from Bubble import Bubble
-from Quicksort import Quicksort
+from Quick import Quicksort
 from Selection import Selection
 from Cocktail import Cocktail
 from Bogo import Bogo
@@ -32,6 +32,7 @@ from MergeBU import MergeBU
 from Bitonic import Bitonic
 from Stooge import Stooge
 from Smooth import Smooth
+from Quick3 import Quick3
 
 class methods:
     def __init__(self, fps, clockObject, surface, font, bars, windowsize):
@@ -95,3 +96,4 @@ class methods:
     bitonic = lambda self: Bitonic(self.array, self.display, self.clock, self.fps).main()
     stooge = lambda self: Stooge(self.array, self.display, self.clock, self.fps).main()
     smooth = lambda self: Smooth(self.array, self.display, self.clock, self.fps).main()
+    quick3 = lambda self: Quick3(self.array, self.display, self.clock, self.fps).main()

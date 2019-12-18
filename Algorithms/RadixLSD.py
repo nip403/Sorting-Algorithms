@@ -1,14 +1,14 @@
 import pygame
 
 class RadixLSD:
-    def __init__(self,array,displayObject,clock,fps):
+    def __init__(self, array, displayObject, clock, fps):
         self.array = array
         self.display = displayObject
         self.clock = clock
         self.fps = fps
         self.accesses = 0
 
-    def list_to_buckets(self,array,base,iteration):
+    def list_to_buckets(self, array, base, iteration):
         buckets = [[] for i in range(base)]
 
         for number in array:
@@ -17,7 +17,7 @@ class RadixLSD:
 
         return buckets
 
-    def buckets_to_list(self,buckets):
+    def buckets_to_list(self, buckets):
         numbers = []
         count = 0
 
@@ -32,9 +32,9 @@ class RadixLSD:
                 numbers.append(number)
 
                 self.display.events()
-                self.display.add_green([p for p,i in enumerate(numbers) if sorted(numbers)[p] == i])
-                self.display.draw(self.array,count)
-                self.display.draw_other(self.accesses,0)
+                self.display.add_green([p for p, i in enumerate(numbers) if sorted(numbers)[p] == i])
+                self.display.draw(self.array, count)
+                self.display.draw_other(self.accesses, 0)
                 
                 pygame.display.flip()
 
@@ -46,5 +46,5 @@ class RadixLSD:
         base = 256 # default = 10, optimum = 256 (https://cs.stackexchange.com/questions/44138/radix-sort-and-changing-bases)
 
         while base ** iteration <= m:
-            self.array = self.buckets_to_list(self.list_to_buckets(self.array,base,iteration))
+            self.array = self.buckets_to_list(self.list_to_buckets(self.array, base, iteration))
             iteration += 1

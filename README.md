@@ -45,8 +45,7 @@ ADDITIONAL INFO:
 - Counting and Bucket Sort: k = range of inputs
 
 # To-do list
-- Implement Timsort & complexities
-- Implement Radix MSD & complexities
+- Implement Timsort, Radix MSD, Gravity, Pigeonhole, Counting, Sleep and Tree sorts (and complexities) 
 - Add Quicksort 3 complexities
 - Add sound
 - Validate Circle sort's average case time complexity and space complexity

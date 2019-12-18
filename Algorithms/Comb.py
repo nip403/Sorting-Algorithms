@@ -1,7 +1,7 @@
 import pygame
 
 class Comb:
-    def __init__(self,array,displayObject,clock,fps):
+    def __init__(self, array, displayObject, clock, fps):
         self.array = array
         self.display = displayObject
         self.clock = clock
@@ -23,20 +23,20 @@ class Comb:
                 gap = 1
 
             self.accesses += 1
-            for i in range(int(len(self.array)-gap)):
+            for i in range(int(len(self.array) - gap)):
                 self.clock.tick(self.fps)
                 
-                if self.array[i] > self.array[int(i+gap)]:
-                    self.array[i],self.array[int(i+gap)] = self.array[int(i+gap)],self.array[i]
+                if self.array[i] > self.array[int(i + gap)]:
+                    self.array[i], self.array[int(i + gap)] = self.array[int(i + gap)], self.array[i]
                     done = False
                     
                 self.accesses += 6
                 self.comparisons += 1
 
                 self.display.events()
-                self.display.add_green([p for p,i in enumerate(self.array) if sorted(self.array)[p] == i])
-                self.display.draw(self.array,i,i+gap)
-                self.display.draw_other(self.accesses,self.comparisons)
+                self.display.add_green([p for p, i in enumerate(self.array) if sorted(self.array)[p] == i])
+                self.display.draw(self.array, i, i + gap)
+                self.display.draw_other(self.accesses, self.comparisons)
 
                 pygame.display.flip()
 
